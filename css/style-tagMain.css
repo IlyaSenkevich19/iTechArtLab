@@ -1,0 +1,39 @@
+main > .first {
+  height: 40%; 
+}
+main > .second {
+ height: 20%;
+}
+main > .contacts {
+ height: 40%;
+}
+.first {
+    display: flex;
+    flex-direction: row;
+   
+}
+.articles {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.second {
+    background-color: #e84c3d;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.contacts {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+.icon-contact {
+    display: flex;
+    flex-direction: row;
+}
+.form {
+    background-color: #e7e7e7;
+    border-radius: 15px;
+}

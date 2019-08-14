@@ -1,3 +1,83 @@
-.div1 {
-    background-color: red;
+header {
+    height: 50px;
+    background-color: #202628; 
+}
+.btns {
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    color: white;
+    font-family: Arial;
+}
+.header-icon {
+    padding-right: 400px;
+}
+.btns:hover {
+    background-color: #e84c3d;
+}
+.site-name {
+    float: left;
+    font-family: Arial;
+    text-align: center;
+    padding: 14px 16px;
+    color: white;
+    padding-left: 400px;
+}
+nav {
+    height: 600px;
+    background-color: grey;
+}
+main {
+    height:700px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+footer {
+    height: 150px;
+    background-color: #202628;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.picture {
+  height: 60%;
+  background-image: url('');
+  background-color: grey;
+  font-family: Arial;
+  font-size: 20px;
+}
+.icon {
+    height: 40%;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: space-around;
+}
+.description__title {
+    font-family: Arial;
+    font-size: 20px;
+}
+.icon > .icons {
+   box-sizing: border-box;
+   margin-top: 40px;
+   width:100px;
+   height:100px;
+   display: flex;
+}
+.icon > .icons > .logo {
+   padding-top: 30px;
+   padding-right: 30px;
+}
+nav > .picture > .picture__icon {
+    position: relative;
+    left: 400px;
+    top: 250px;
+}
+nav > .picture > .picture__icon > .picture__icon__desc {
+    color: white;
+}
+.picture__icon__link > a {
+    color: #e84c3d;
 }
