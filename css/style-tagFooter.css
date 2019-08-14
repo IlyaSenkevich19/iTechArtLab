@@ -1,7 +1,7 @@
 footer > .footer-icon {
    width:50%;
     color: white;
-    font-family: Arial;
+    font-family: 'Fjalla One', sans-serif;
     display: flex;
     justify-content: flex-start;
     padding-right: 10px;
@@ -17,10 +17,13 @@ footer > .footer-logos {
     justify-content: flex-end;
     align-items: center;
     padding-right: 400px;
+  
 }
 footer > .footer-icon > .footer-btns {
   padding-left: 30px;
+  cursor: pointer;
 }
 footer > .footer-logos > .logo {
     padding-right: 30px;
+    cursor: pointer;
 }

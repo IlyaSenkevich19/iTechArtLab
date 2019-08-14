@@ -7,33 +7,34 @@ header {
     text-align: center;
     padding: 14px 16px;
     color: white;
-    font-family: Arial;
+    font-family: 'Fjalla One', sans-serif;
+    cursor: pointer;
 }
 .header-icon {
-    padding-right: 400px;
+    padding-right: 200px;
 }
 .btns:hover {
     background-color: #e84c3d;
 }
 .site-name {
     float: left;
-    font-family: Arial;
+    font-family: 'Fjalla One', sans-serif;
     text-align: center;
     padding: 14px 16px;
     color: white;
-    padding-left: 400px;
+    padding-left: 200px;
 }
 nav {
-    height: 600px;
+    height: 700px;
     background-color: grey;
 }
 main {
-    height:700px;
+    height:1000px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 footer {
     height: 150px;
@@ -44,9 +45,10 @@ footer {
 }
 .picture {
   height: 60%;
-  background-image: url('');
+  background-image: url('../html/img/mid_300256_426393.jpg');
+  width: 100%;
   background-color: grey;
-  font-family: Arial;
+  font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
 }
 .icon {
@@ -54,9 +56,11 @@ footer {
     background-color: #e7e7e7;
     display: flex;
     justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .description__title {
-    font-family: Arial;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 20px;
 }
 .icon > .icons {
@@ -72,7 +76,7 @@ footer {
 }
 nav > .picture > .picture__icon {
     position: relative;
-    left: 400px;
+    left: 200px;
     top: 250px;
 }
 nav > .picture > .picture__icon > .picture__icon__desc {

@@ -10,7 +10,6 @@ main > .contacts {
 .first {
     display: flex;
     flex-direction: row;
-   
 }
 .articles {
     display: flex;
@@ -36,4 +35,52 @@ main > .contacts {
 .form {
     background-color: #e7e7e7;
     border-radius: 15px;
+}
+input[type='text'], textarea {
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    font-style: oblique;
+}
+.round-img {
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.contact__img {
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+.main__btn {
+   background-color: #e84c3d;
+   border: none;
+   width: 100px;
+   height: 30px;
+   padding: 10px;
+   color: white;
+   border-radius: 15px;
+   font-size: 12px;
+   outline: none;
+   cursor: pointer;
+}
+.btn-subcribe {
+    background-color: black;
+   border: none;
+   width: 100px;
+   height: 30px;
+   padding: 10px;
+   color: white;
+   border-radius: 15px;
+   font-size: 12px;
+   outline: none;
+   cursor: pointer;
+}
+.info-title, .info__desc {
+    color: white;
+    font-family:'Fjalla One', sans-serif;
 }
