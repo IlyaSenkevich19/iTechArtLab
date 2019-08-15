@@ -1,11 +1,12 @@
 header {
-    height: 50px;
+    height: 60px;
     background-color: #202628; 
+    width:100%;
 }
 .btns {
     float: right;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 18px;
     color: white;
     font-family: 'Fjalla One', sans-serif;
     cursor: pointer;
@@ -15,21 +16,24 @@ header {
 }
 .btns:hover {
     background-color: #e84c3d;
+    transition: 0.5s;
 }
 .site-name {
     float: left;
     font-family: 'Fjalla One', sans-serif;
     text-align: center;
-    padding: 14px 16px;
+    padding-top: 15px;
     color: white;
-    padding-left: 200px;
+    padding-left: 300px;
+    font-size: 30px;
+    letter-spacing: 1px;
 }
 nav {
-    height: 700px;
+    height: 800px;
     background-color: grey;
 }
 main {
-    height:1000px;
+    height:1500px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -44,29 +48,52 @@ footer {
     justify-content: space-between;
 }
 .picture {
-  height: 60%;
-  background-image: url('../html/img/mid_300256_426393.jpg');
+  height: 70%;
   width: 100%;
   background-color: grey;
   font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
 }
+.image {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+}
+.image > img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
 .icon {
-    height: 40%;
+    height: 30%;
     background-color: #e7e7e7;
     display: flex;
     justify-content: space-around;
-    padding-left: 10px;
-    padding-right: 10px;
+    
 }
 .description__title {
     font-family: 'Fjalla One', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    width: 250px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
 }
+.description__content, .icon-contact__content {
+    font-family: 'Fjalla One', sans-serif;
+    color: grey;
+    font-size: 15px;
+    width: 300px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
 .icon > .icons {
    box-sizing: border-box;
    margin-top: 40px;
-   width:100px;
+   width:200px;
    height:100px;
    display: flex;
 }
@@ -76,12 +103,21 @@ footer {
 }
 nav > .picture > .picture__icon {
     position: relative;
-    left: 200px;
-    top: 250px;
+    left: 300px;
+    bottom: 250px;
+    width:400px;
+}
+nav > .picture > .picture__icon > .picture__icon__logo {
+    padding-bottom: 10px;
 }
 nav > .picture > .picture__icon > .picture__icon__desc {
     color: white;
+   font-size: 30px;
+   letter-spacing: 4px;
+   padding-bottom: 10px;
 }
 .picture__icon__link > a {
     color: #e84c3d;
+    text-decoration: none;
+    letter-spacing: 1px;
 }

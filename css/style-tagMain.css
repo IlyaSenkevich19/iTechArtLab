@@ -1,15 +1,39 @@
 main > .first {
-  height: 40%; 
+  height: 35%; 
+  margin-left: 100px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
 }
 main > .second {
- height: 20%;
+ height: 25%;
+ background-color: #e84c3d;
+ border-radius: 15px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ margin-left: 100px;
+ margin-top: 20px;
 }
 main > .contacts {
  height: 40%;
+ margin-top: 30px;
+ margin-left: 100px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
 }
-.first {
-    display: flex;
-    flex-direction: row;
+main > .contacts > .contact {
+    width: 32%;
+    height: 100%;
+}
+main > .contacts > .contact > .title {
+    color: black;
+}
+.first > .desc > .main-title {
+   letter-spacing: 1px;
+   font-family: 'Fjalla One', sans-serif;
+   font-size: 25px;
 }
 .articles {
     display: flex;
@@ -17,16 +41,17 @@ main > .contacts {
     margin-top: 10px;
     margin-right: 10px;
 }
-.second {
-    background-color: #e84c3d;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
+h4 {
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 1px;
 }
-.contacts {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: row;
+.article__desc {
+    font-family: 'Fjalla One', sans-serif;
+    color: grey;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 60%;
 }
 .icon-contact {
     display: flex;
@@ -35,52 +60,100 @@ main > .contacts {
 .form {
     background-color: #e7e7e7;
     border-radius: 15px;
+    height: 400px;
 }
-input[type='text'], textarea {
-    border-radius: 9px;
+.icon-form {
+    border-radius: 40px;
     font-size: 15px;
     outline: none;
     border: none;
     margin-bottom: 10px;
     font-style: oblique;
+    height: 30px;
+    width: 500px;
+    padding: 10px;
+    padding-left: 15px;
 }
 .round-img {
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    margin-left: 20px;
+    border-radius: 300px;
+    width: 400px;
+    height: 400px;
+    margin-left: 40px;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 .contact__img {
     border-radius: 100px;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
+    margin: 10px 10px;
+}
+.icon-desc {
+    display: flex;
+    margin-right: 60px;
+}
+.icon-desc__logo {
+    margin-top: 50px;
+    margin-left: 20px;
 }
 .main__btn {
    background-color: #e84c3d;
    border: none;
-   width: 100px;
-   height: 30px;
-   padding: 10px;
+   width: 70px;
+   height: 40px;
    color: white;
-   border-radius: 15px;
-   font-size: 12px;
+   border-radius:20px;
+   font-size: 15px;
    outline: none;
    cursor: pointer;
+   font-family: 'Fjalla One', sans-serif;
+   letter-spacing: 1px;
 }
 .btn-subcribe {
-    background-color: black;
+   background-color: black;
    border: none;
    width: 100px;
-   height: 30px;
+   height: 40px;
    padding: 10px;
    color: white;
-   border-radius: 15px;
-   font-size: 12px;
+   border-radius: 20px;
+   font-size: 15px;
    outline: none;
    cursor: pointer;
+   font-family: 'Fjalla One', sans-serif;
+   letter-spacing: 1px;
+   margin-left: 10px;
 }
-.info-title, .info__desc {
+.info-title, .info__desc, .icon-input__title, .title {
     color: white;
     font-family:'Fjalla One', sans-serif;
+}
+.info-title, .icon-input__title, .title {
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.info__desc, .form__desc {
+    font-size: 15px;
+    font-weight: 200;
+    width: 500px;
+    margin-left: 20px;
+    line-height: 2;
+    color:grey;
+    font-family:'Fjalla One', sans-serif;
+}
+.contact-input {
+    border-radius: 40px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    font-style: oblique;
+    height: 30px;
+    width: 500px;
+    padding: 10px;
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
