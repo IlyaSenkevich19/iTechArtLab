@@ -1,24 +1,25 @@
 main > .first {
-  height: 35%; 
+  min-height: 35%; 
   margin-left: 100px;
   margin-top: 100px;
   display: flex;
   flex-direction: row;
 }
 main > .second {
- height: 25%;
+ min-height: 25%;
  background-color: #e84c3d;
  border-radius: 15px;
  display: flex;
  flex-direction: row;
  justify-content: space-around;
- margin-left: 100px;
- margin-top: 20px;
+ margin-left: 100px; 
+  margin-top: 20px;
 }
 main > .contacts {
- height: 40%;
+ min-height: 40%;
  margin-top: 30px;
  margin-left: 100px;
+ margin-bottom: 50px;
  display: flex;
  flex-direction: row;
  justify-content: space-between;
@@ -33,13 +34,18 @@ main > .contacts > .contact > .title {
 .first > .desc > .main-title {
    letter-spacing: 1px;
    font-family: 'Fjalla One', sans-serif;
-   font-size: 25px;
+   font-size: 1.1vw;
+   width: 80%;
 }
 .articles {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
     margin-right: 10px;
+}
+.article {
+    min-width: 40%;
+    min-height: 40%;
 }
 h4 {
     font-family: 'Fjalla One', sans-serif;
@@ -49,13 +55,17 @@ h4 {
     font-family: 'Fjalla One', sans-serif;
     color: grey;
     letter-spacing: 1px;
-    font-size: 15px;
+    font-size: 0.7vw;
     line-height: 1.5;
-    width: 60%;
+    width: 80%;
+    min-height: 40%;
 }
 .icon-contact {
     display: flex;
     flex-direction: row;
+    padding: 10px 10px; 
+    min-width:100%;
+    min-height: 100%;
 }
 .form {
     background-color: #e7e7e7;
@@ -74,17 +84,26 @@ h4 {
     margin-bottom: 10px;
     font-style: oblique;
     height: 30px;
-    width: 500px;
+    width: 80%;
     padding: 10px;
     padding-left: 15px;
+    margin-left: 20px;
+}
+.pict {
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.desc {
+    width: 60%;
 }
 .round-img {
-    border-radius: 300px;
+    border-radius: 100%;
     width: 400px;
     height: 400px;
-    margin-left: 40px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    min-width: 60%;
+    min-height:60%;
 }
 .contact__img {
     border-radius: 100px;
@@ -92,10 +111,13 @@ h4 {
     height: 70px;
     margin: 10px 10px;
 }
+.icon-input {
+    width: 50%;
+}
 .icon-desc {
     display: flex;
-    margin-right: 60px;
-    margin-top: 60px;
+    padding-bottom: 40px;
+    width: 50%;
 }
 .icon-desc__logo {
     margin-top: 50px;
@@ -117,9 +139,6 @@ h4 {
 .send-btn {
     height: 120px;
 }
-.icon-input {
-    padding-top: 50px;
-}
 .btn-subcribe {
    background-color: black;
    border: none;
@@ -133,30 +152,38 @@ h4 {
    cursor: pointer;
    font-family: 'Fjalla One', sans-serif;
    letter-spacing: 1px;
-   margin-left: 10px;
+   margin-left: 20px;
+
 }
 .info-title, .info__desc, .icon-input__title, .title {
     color: white;
     font-family:'Fjalla One', sans-serif;
 }
-.info-title, .icon-input__title, .title {
+.info-title, .title {
     letter-spacing: 2px;
     margin-top: 50px;
     margin-left: 30px;
     font-size: 20px;
 }
+.icon-input__title {
+    letter-spacing: 2px;
+    margin-left: 30px;
+    font-size: 0.85vw;
+    margin-top: 50px;
+}
 .info__desc, .form__desc, .icon-contact__info {
-    font-size: 15px;
+    font-size: 0.6vw;
     font-weight: 200;
-    width: 450px;
-    margin-left: 20px;
+    width: 90%;
+    padding-left: 30px;
     line-height: 2;
     font-family:'Fjalla One', sans-serif;
     letter-spacing: 1px;
 }
 .form__desc, .icon-contact__info {
     color: grey;
-   
+    height: 100%;
+    
 }
 .contact-input {
     border-radius: 40px;
@@ -166,7 +193,7 @@ h4 {
     margin-bottom: 10px;
     font-style: oblique;
     height: 80px;
-    width: 400px;
+    width: 80%;
     padding: 10px;
     padding-left: 15px;
     margin-top: 10px;
@@ -180,6 +207,7 @@ h4 {
 }
 .third-contact__desc {
     margin: 0px;
+    width: 100%;
 }
 li {
     list-style-type: none;

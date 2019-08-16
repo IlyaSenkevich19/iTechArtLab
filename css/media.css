@@ -1,3 +1,5 @@
-@media screen and (min-device-width: 1600px) {
-    
+@media screen and (max-width: 800px) {
+    .sitename {
+        color: green;
+    }
 }

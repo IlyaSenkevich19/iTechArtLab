@@ -1,0 +1,37 @@
+nav {
+    height: 800px; 
+    background-color: grey;
+}
+.icon {
+    height: 30%;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 300px;
+}
+.icon > .icons {
+    box-sizing: border-box;
+    margin-top: 60px;
+    width:33%;
+    height:100%;
+    display: flex;
+ }
+ .icon > .icons > .logo {
+    padding-top: 30px;
+    padding-right: 30px;
+ }
+ nav > .picture > .picture__icon {
+    position: relative;
+    left: 300px;
+    bottom: 250px;
+    width:400px;
+}
+nav > .picture > .picture__icon > .picture__icon__logo {
+    padding-bottom: 10px;
+}
+nav > .picture > .picture__icon > .picture__icon__desc {
+    color: white;
+   font-size: 30px;
+   letter-spacing: 4px;
+   padding-bottom: 10px;
+}

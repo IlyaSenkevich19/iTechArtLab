@@ -1,0 +1,29 @@
+header {
+    height: 90px;
+    background-color: #202628; 
+}
+header > .header-icon {
+    padding-right: 200px;
+}
+.site-name {
+    float: left;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+    padding-top: 25px;
+    color: white;
+    padding-left: 300px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+.header-icon > .btns {
+    float: right;
+    text-align: center;
+    padding: 34px 23px;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    cursor: pointer;
+}
+.btns:hover {
+    background-color: #e84c3d;
+    transition: 0.5s;
+}
