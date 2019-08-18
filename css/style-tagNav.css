@@ -1,37 +1,90 @@
-nav {
-    height: 800px; 
-    background-color: grey;
+.navWrapper {
+   height: 70%;
+   width: 100%;
+   background-color: grey;
+   font-family: 'Fjalla One', sans-serif;
+ }
+
+ .image {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
-.icon {
+
+.image > img {
+   flex-shrink: 0;
+   min-width: 100%;
+   min-height: 100%
+}
+
+.row {
     height: 30%;
     background-color: #e7e7e7;
     display: flex;
     justify-content: space-around;
-    padding-left: 300px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
-.icon > .icons {
+
+.rowWrapper {
+   width:36%;
+   height:100%;
     box-sizing: border-box;
-    margin-top: 60px;
-    width:33%;
-    height:100%;
+    margin-top: 40px;
     display: flex;
  }
- .icon > .icons > .logo {
-    padding-top: 30px;
-    padding-right: 30px;
+
+ .description {
+    height: 150px;
+    width: 50px;
  }
- nav > .picture > .picture__icon {
+
+ .logo {
+    padding: 30px 30px 0px 0px;
+    height: 10%;
+    min-width: 10%;
+ }
+
+ .description__title {
+   width: 250px;
+   font-family: 'Fjalla One', sans-serif;
+   font-size: 1.3vw;
+   padding-bottom: 20px;
+   letter-spacing: 2px;
+}
+
+.description__content {
+   width: 150px;
+   font-family: 'Lato', sans-serif;
+   color: grey;
+   font-size: 0.7vw;
+   letter-spacing: 1px;
+   line-height: 2;
+}
+
+ .imgWrapper {
     position: relative;
     left: 300px;
     bottom: 250px;
     width:400px;
 }
-nav > .picture > .picture__icon > .picture__icon__logo {
+
+.imgWrapper__logo {
     padding-bottom: 10px;
 }
-nav > .picture > .picture__icon > .picture__icon__desc {
+
+.imgWrapper__title {
     color: white;
-   font-size: 30px;
+   font-size: 1.8vw;
    letter-spacing: 4px;
    padding-bottom: 10px;
+}
+
+.imgWrapper__link > a {
+   color: #e84c3d;
+   text-decoration: none;
+   letter-spacing: 1px;
 }

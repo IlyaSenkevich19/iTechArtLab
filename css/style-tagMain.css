@@ -1,133 +1,74 @@
-main > .first {
+.firstSection {
   min-height: 35%; 
-  margin-left: 100px;
-  margin-top: 100px;
   display: flex;
   flex-direction: row;
+  margin: 100px 0px 0px 100px;
 }
-main > .second {
- min-height: 25%;
- background-color: #e84c3d;
- border-radius: 15px;
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- margin-left: 100px; 
-  margin-top: 20px;
+
+.secondSection {
+  min-height: 25%;
+  background-color: #e84c3d;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0px 0px 100px;
 }
-main > .contacts {
- min-height: 40%;
- margin-top: 30px;
- margin-left: 100px;
- margin-bottom: 50px;
- display: flex;
- flex-direction: row;
- justify-content: space-between;
+
+.thirdSection {
+  min-height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 0px 50px 100px;
 }
-main > .contacts > .contact {
-    width: 32%;
-    height: 100%;
-}
-main > .contacts > .contact > .title {
-    color: black;
-}
-.first > .desc > .main-title {
+
+.firstSectionWrap__title {
+   width: 80%;
    letter-spacing: 1px;
    font-family: 'Fjalla One', sans-serif;
    font-size: 1.1vw;
-   width: 80%;
 }
-.articles {
+
+.firstSectionWrap__subtitle {
+    letter-spacing: 2px;
+    font-family: "Fjalla One", sans-serif;
+    color:#e84c3d;
+    font-size: 1vw;
+}
+
+.articleWrap {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin: 10px 10px 0px 0px;
 }
+
 .article {
     min-width: 40%;
     min-height: 40%;
 }
-h4 {
+
+.article__title {
     font-family: 'Fjalla One', sans-serif;
     letter-spacing: 1px;
 }
+
 .article__desc {
-    font-family: 'Fjalla One', sans-serif;
+    width: 80%;
+    min-height: 40%;
+    font-family: 'Lato', sans-serif;
     color: grey;
     letter-spacing: 1px;
     font-size: 0.7vw;
     line-height: 1.5;
-    width: 80%;
-    min-height: 40%;
+    padding-bottom: 10px;
 }
-.icon-contact {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 10px; 
-    min-width:100%;
-    min-height: 100%;
-}
-.form {
-    background-color: #e7e7e7;
-    border-radius: 10px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-}
-.icon-form {
-    border-radius: 40px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    margin-bottom: 10px;
-    font-style: oblique;
-    height: 30px;
-    width: 80%;
-    padding: 10px;
-    padding-left: 15px;
-    margin-left: 20px;
-}
-.pict {
-    width:40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.desc {
-    width: 60%;
-}
-.round-img {
-    border-radius: 100%;
-    width: 400px;
-    height: 400px;
-    min-width: 60%;
-    min-height:60%;
-}
-.contact__img {
-    border-radius: 100px;
-    width: 70px;
-    height: 70px;
-    margin: 10px 10px;
-}
-.icon-input {
-    width: 50%;
-}
-.icon-desc {
-    display: flex;
-    padding-bottom: 40px;
-    width: 50%;
-}
-.icon-desc__logo {
-    margin-top: 50px;
-    margin-left: 20px;
-}
-.main__btn {
+
+.article__btn {
+   width: 60px;
+   height: 30px;
    background-color: #e84c3d;
    border: none;
-   width: 90px;
-   height: 50px;
    color: white;
    border-radius:30px;
    font-size: 15px;
@@ -136,15 +77,88 @@ h4 {
    font-family: 'Fjalla One', sans-serif;
    letter-spacing: 1px;
 }
-.send-btn {
-    height: 120px;
+
+.sections__content {
+    min-width:100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    /* padding: 10px 10px;  */
 }
-.btn-subcribe {
+
+.form {
+    height: 300px;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.search {
+    height: 30px;
+    width: 60%;
+    border-radius: 40px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    font-style: oblique;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 0px 0px 10px 20px;
+}
+
+.pict {
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc {
+    width: 60%;
+}
+
+.thumb {
+    width: 350px;
+    height: 350px;
+    min-width: 60%;
+    min-height:60%;
+    border-radius: 100%;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    margin: 10px 10px;
+}
+
+.icon-search {
+    width: 50%;
+}
+
+.descWrap {
+    width: 50%;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.descWrap__logo {
+    margin: 50px 0px 0px 20px;
+}
+
+.send-btn {
+    height: 45px;
+    width: 80px;
+}
+
+.icon-search__btn {
+    width: 100px;
+   height: 40px;
    background-color: black;
    border: none;
-   width: 100px;
-   height: 40px;
-   padding: 10px;
    color: white;
    border-radius: 20px;
    font-size: 15px;
@@ -152,66 +166,114 @@ h4 {
    cursor: pointer;
    font-family: 'Fjalla One', sans-serif;
    letter-spacing: 1px;
-   margin-left: 20px;
+   margin: 0px 0px 0px 10px;
+   padding: 10px;
+}
 
+.sections__content-text {
+    width: 300px;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    color: grey;
+    font-size: 0.6vw;
+    letter-spacing: 1px;
+    line-height: 2;
+    padding-top: 20px;
+ 
 }
-.info-title, .info__desc, .icon-input__title, .title {
+
+.info__title, .info__desc, .icon-search__title, .sections__title {
     color: white;
-    font-family:'Fjalla One', sans-serif;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 10px;
 }
-.info-title, .title {
+
+.info__title, .sections__title {
     letter-spacing: 2px;
-    margin-top: 50px;
-    margin-left: 30px;
-    font-size: 20px;
+    margin: 50px 0px 0px 30px;
+    font-size: 1.2vw;
 }
-.icon-input__title {
+
+.icon-search__title {
     letter-spacing: 2px;
-    margin-left: 30px;
-    font-size: 0.85vw;
-    margin-top: 50px;
+    font-size: 1.2vw;
+    margin: 50px 0px 0px 30px;
 }
-.info__desc, .form__desc, .icon-contact__info {
+
+.info__desc, .contact-desc__info {
+    width: 90%;
     font-size: 0.6vw;
     font-weight: 200;
-    width: 90%;
-    padding-left: 30px;
     line-height: 2;
-    font-family:'Fjalla One', sans-serif;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    padding-left: 30px;
+}
+
+.form__desc, .contact-desc__info {
+    color: grey;
+    padding-left: 0px;
+}
+
+.form__desc {
+    height: 50px;
+    width: 90%;
+    font-size: 0.7vw;
+    font-weight: 200;
+    line-height: 2;
+    font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
 }
-.form__desc, .icon-contact__info {
-    color: grey;
-    height: 100%;
-    
+
+.contact-desc__info {
+    height: 70px;
+   
 }
-.contact-input {
+
+.form__input {
+    height: 20px;
+    width: 80%;
     border-radius: 40px;
     font-size: 15px;
     outline: none;
     border: none;
-    margin-bottom: 10px;
     font-style: oblique;
-    height: 80px;
-    width: 80%;
-    padding: 10px;
+    padding: 5px;
     padding-left: 15px;
-    margin-top: 10px;
+    margin: 5px 0px 5px 0px;
 }
-.icon-contact__title {
+
+.contact-desc__title {
     color:#e84c3d;
      font-family:"Fjalla One", sans-serif;
      font-size: 17px;
      font-weight: 500; 
      padding-left: 20px;
 }
-.third-contact__desc {
+
+.contact-desc {
     margin: 0px;
     width: 100%;
+    height: 85px;
+    padding-top: 10px;
 }
-li {
+
+.items{
+    font-family: 'Lato', sans-serif;
     list-style-type: none;
+    padding-left: 20px;
+
 }
-ul {
+
+.list {
     padding: 0px;
+}
+
+.sections {
+    width: 32%;
+    height: 100%;
+}
+
+.sections__title {
+    color: black;
 }

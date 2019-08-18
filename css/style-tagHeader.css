@@ -1,29 +1,32 @@
-header {
-    height: 90px;
-    background-color: #202628; 
+.headerWrapper {
+    padding: 0px 150px 0px 0px;
 }
-header > .header-icon {
-    padding-right: 200px;
-}
-.site-name {
+
+.headerLogo {
     float: left;
     font-family: 'Fjalla One', sans-serif;
-    text-align: center;
-    padding-top: 25px;
     color: white;
-    padding-left: 300px;
     font-size: 30px;
     letter-spacing: 1px;
+    text-align: center;
+    padding: 25px 0px 0px 250px;
 }
-.header-icon > .btns {
+
+.headerWrapper__button {
     float: right;
     text-align: center;
-    padding: 34px 23px;
-    color: white;
     font-family: 'Fjalla One', sans-serif;
+    color: white;
     cursor: pointer;
+    padding: 34px 23px;
+    list-style-type: none;
 }
-.btns:hover {
+
+.headerWrapper__button:hover {
     background-color: #e84c3d;
     transition: 0.5s;
+}
+
+.menu {
+    display: none;
 }
