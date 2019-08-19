@@ -27,14 +27,14 @@
    width: 80%;
    letter-spacing: 1px;
    font-family: 'Fjalla One', sans-serif;
-   font-size: 1.1vw;
+   font-size: 17px;
 }
 
 .firstSectionWrap__subtitle {
     letter-spacing: 2px;
     font-family: "Fjalla One", sans-serif;
     color:#e84c3d;
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 .articleWrap {
@@ -190,7 +190,7 @@
 .info__title, .sections__title {
     letter-spacing: 2px;
     margin: 50px 0px 0px 30px;
-    font-size: 1.2vw;
+    font-size: 17px;
 }
 
 .icon-search__title {

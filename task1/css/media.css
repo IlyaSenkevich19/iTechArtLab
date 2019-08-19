@@ -4,6 +4,15 @@
         height: 400px;
         margin: 0 auto;
     }
+    .rowWrapper {
+        margin: 0 auto;
+        position: relative;
+        right: 80px;
+    }
+    .imgWrapper__logo, .imgWrapper__title, a {
+        position: relative;
+       left: 150px;
+    }
     main {
       margin-top: 250px;
     } 
@@ -23,8 +32,11 @@
         flex-direction: column;
     }
     .sections {
-        width: 100%;
+       width: 600px;
         margin: 0 auto;
+    }
+    .sections__title {
+       padding-left: 150px;
     }
     .pict {
         margin: 0 auto;
@@ -36,20 +48,153 @@
     }
     .icon-search {
         position: relative;
-        left: 30px;
         bottom: 30px;
     }
     .descWrap, .icon-search {
-        
         margin: 0 auto;
     }
+  
+    .description__content {
+        width: 400px;
+  }
+  .article__btn {
+      position: relative;
+      left: 250px;
+  }
+  .form-input {
+      margin-left: 20px;
+      width: 50%;
+  }
+  .article__btn {
+      position: relative;
+      left: 10px;
+  }
 }
 
 @media screen and (max-width: 1100px) {
+    main {
+        margin-top: 250px;
+      } 
     .pict {
         display: none;
     }
     .secondSection {
         margin-top: 30px;
+        width: 100%;
     }
+    .sections {
+        margin-left: 100px;
+    }
+    .icon-search {
+        width:500px;
+    }
+    .descWrap {
+        width:500px;
+    }
+}
+
+@media screen and (max-width: 1014px){
+    .headerLogo {
+        padding: 20px 0px 0px 100px;
+    }
+}
+@media screen and (max-width: 900px) {
+   .secondSection {
+       width: 100%;
+   }
+   .sections {
+       width: 500px;
+   }
+   .thirdSection {
+     position: relative;
+     right: 60px;
+   }
+}
+
+@media screen and (max-width: 777px) {
+    html {
+        width: 1024px;
+    }
+    header {
+        display: flex;
+    } 
+    nav {
+        width: 1024px;
+        height: 1000px;
+    } 
+   
+    main {
+        width: 1024px;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+    .headerWrapper__button {
+        position: relative;
+        bottom: 15px;
+    }
+    .image {
+        width: 1024px;
+        height: 100%;
+    }
+    .row {
+        padding-left: 150px;
+        height: 320px;
+    }
+    .description__title {
+        padding: 0;
+    }
+    .rowWrapper {
+        height: 90px;
+    }
+    .logo {
+        padding-top: 0px;
+    }
+    .footerWrapper {
+       padding-left: 200px;
+       padding-top: 20px;
+    }
+    .footerLogosWrapper {
+        padding: 0px 0px 20px 50px;
+    }
+    .secondSection {
+        width: 100%;
+        position: relative;
+        left: -30px;
+        width: 500px;
+    }
+    .firstSectionWrap {
+        width: 600px;
+        padding-left: 150px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .thirdSection {
+      margin-left: 190px;
+    }
+    .navWrapper {
+        width: 810px;
+      
+    }
+    .imgWrapper {
+        position: relative;
+        left: 150px;
+        
+    }
+}
+@media screen and (max-width: 750px) {
+   .headerLogo {
+       padding-left: 50px;
+   }
+}
+@media screen and (max-width: 866px) {
+   .headerLogo {
+       padding-left: 50px;
+   }
+}
+@media screen and (max-width: 812px) {
+   .headerLogo {
+       padding-left: 20px;
+   }
 }
