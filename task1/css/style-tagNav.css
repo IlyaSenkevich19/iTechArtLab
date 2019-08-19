@@ -33,7 +33,6 @@
    width:36%;
    height:100%;
     box-sizing: border-box;
-    /* margin-top: 10px; */
     display: flex;
  }
 
@@ -58,10 +57,10 @@
 }
 
 .description__content {
-   width: 450px;
+   width: 400px;
    font-family: 'Lato', sans-serif;
    color: grey;
-   font-size: 0.7vw;
+   font-size: 12px;
    letter-spacing: 1px;
    line-height: 2;
 }
