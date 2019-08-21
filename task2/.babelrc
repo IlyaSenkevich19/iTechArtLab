@@ -1,0 +1,16 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "ie": "last 1 version",
+                    "chrome": "last 10 versions",
+                    "firefox": "last 10 versions",
+                    "safari": "11.1" 
+                },
+                "useBuiltIns": "usage"
+            }
+        ]
+    ]
+}

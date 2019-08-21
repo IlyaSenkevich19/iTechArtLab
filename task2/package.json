@@ -1,0 +1,26 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node 5task/index5.js",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "webpack": "^4.39.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.7"
+  }
+}

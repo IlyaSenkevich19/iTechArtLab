@@ -33,9 +33,7 @@ class ArrayCalc {
         // })
 
         let firstPart = Math.floor((arr.length - 1) / 2);
-        console.log(firstPart);
         let secondPart = Math.ceil((arr.length - 1) / 2);
-        console.log(secondPart);
         mediumEl = (arr[firstPart] + arr[secondPart]) / 2;
         return mediumEl;
     }
