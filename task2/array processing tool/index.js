@@ -11,7 +11,7 @@ class ArrayCalc {
     }
 
     maxSubSumSecond(arr) {
-        
+
     }
 
     minElement(arr) {
@@ -43,11 +43,11 @@ class ArrayCalc {
     }
 
     selection(arr) {
-    //   let maxLength = [];
-      let maxLength = arr.filter((a,b) => {
-          return (a > b) ? true : false;
-      })
-      return maxLength;
+        //   let maxLength = [];
+        let maxLength = arr.filter((a, b) => {
+            return (a > b) ? true : false;
+        })
+        return maxLength;
     }
 
 
@@ -56,21 +56,35 @@ class ArrayCalc {
 const newCalc = new ArrayCalc();
 
 
-let input = document.querySelector('input');
+const cache = (key, value) => {
+    if (typeof value == 'undefined') {
+        return cache[key];
+    }
+    cache[key] = value;
+}
 
-let addElementButton = document.querySelector('.addElement');
-let maxSubSumButton = document.querySelector('.findMax');
-let minButton = document.querySelector('.minEl');
-let maxButton = document.querySelector('.maxEl');
-let mediumButton = document.querySelector('.mediumEl');
-let selectedButton = document.querySelector('.select');
+const findElement = selector => {
+    if (!cache(selector)) {
+        cache(selector, document.querySelector(selector));
+    }
+    return cache(selector);
+}
 
-let showArray = document.querySelector('.info');
-let showMaxSub = document.querySelector('.show-maxSub');
-let showMaxEl = document.querySelector('.show-maxEl');
-let showMinEl = document.querySelector('.show-minEl');
-let showMediumEl = document.querySelector('.show-mediumEl');
-let showSelectedArray = document.querySelector('.show-select');
+let input = findElement('input');
+
+let addElementButton = findElement('.addElement');
+let maxSubSumButton = findElement('.findMax');
+let minButton = findElement('.minEl');
+let maxButton = findElement('.maxEl');
+let mediumButton = findElement('.mediumEl');
+let selectedButton = findElement('.select');
+
+let showArray = findElement('.info');
+let showMaxSub = findElement('.show-maxSub');
+let showMaxEl = findElement('.show-maxEl');
+let showMinEl = findElement('.show-minEl');
+let showMediumEl = findElement('.show-mediumEl');
+let showSelectedArray = findElement('.show-select');
 
 maxButton.addEventListener('click', () => {
     showMaxEl.innerHTML = newCalc.maxElement(newArr);
@@ -104,6 +118,7 @@ const newArr = [];
 function creatingArr(element) {
     newArr.push(Number(element));
 };
+
 
 
 
