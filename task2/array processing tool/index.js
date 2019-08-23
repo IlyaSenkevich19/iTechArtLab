@@ -10,6 +10,10 @@ class ArrayCalc {
         return maxSum;
     }
 
+    maxSubSumSecond(arr) {
+        
+    }
+
     minElement(arr) {
         let minElement = 0;
         minElement = Math.min(...arr);
