@@ -2,23 +2,22 @@
 const converter = (function () {
 
     const converting = str => {
-        const reg = new RegExp('^[0-1]+$')
-        const split = str.split('');
-        if (str.includes(reg)) {
-            console.log(binToDec(str));
+        // const split = str.split('');
+        const string = str.join('');
+        if (str.includes(0) && str.includes(1)) {
+          return binToDec(string);
         } else {
-            console.log('lol')
-            console.log(decToBin(str));
+          return  decToBin(string);
         }
     }
 
     const binToDec = str => {
-        return parseInt((str + '')
-            .replace(/[^01]/gi, ''), 2);
+        // return parseInt((str + '').replace(/[^01]/gi, ''), 2);
+        return parseInt(str, 2);
     };
 
     const decToBin = str => {
-        return parseInt(str, 2)
+        return parseInt(Number(str).toString(2));
     }
 
 
@@ -27,6 +26,6 @@ const converter = (function () {
     }
 })()
 
-converter.getNumber('101010101011001100');
-converter.getNumber(174796);
+console.log(converter.getNumber([1,1,1,1,1,0,0,0,1,1,0,1]));
+console.log(converter.getNumber([6,5,4]));
 
