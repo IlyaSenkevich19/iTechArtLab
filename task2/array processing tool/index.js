@@ -11,7 +11,15 @@ class ArrayCalc {
     }
 
     maxSubSumSecond(arr) {
-
+        let maxSum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let everySum = 0;
+            for (let j = i; i < arr.length; j++) {
+                everySum += arr[j];
+                maxSum = Math.max(maxSum, everySum);
+            }
+        }
+        return maxSum;
     }
 
     minElement(arr) {
@@ -72,19 +80,21 @@ const findElement = selector => {
 
 let input = findElement('input');
 
-let addElementButton = findElement('.addElement');
-let maxSubSumButton = findElement('.findMax');
-let minButton = findElement('.minEl');
-let maxButton = findElement('.maxEl');
-let mediumButton = findElement('.mediumEl');
-let selectedButton = findElement('.select');
+const addElementButton = findElement('.addElement');
+const maxSubSumButton = findElement('.findMax');
+const maxSubSumButton2 = findElement('.findMax2');
+const minButton = findElement('.minEl');
+const maxButton = findElement('.maxEl');
+const mediumButton = findElement('.mediumEl');
+const selectedButton = findElement('.select');
 
-let showArray = findElement('.info');
-let showMaxSub = findElement('.show-maxSub');
-let showMaxEl = findElement('.show-maxEl');
-let showMinEl = findElement('.show-minEl');
-let showMediumEl = findElement('.show-mediumEl');
-let showSelectedArray = findElement('.show-select');
+const showArray = findElement('.info');
+const showMaxSub = findElement('.show-maxSub');
+const showMaxSub2 = findElement('.show-maxSub2');
+const showMaxEl = findElement('.show-maxEl');
+const showMinEl = findElement('.show-minEl');
+const showMediumEl = findElement('.show-mediumEl');
+const showSelectedArray = findElement('.show-select');
 
 maxButton.addEventListener('click', () => {
     showMaxEl.innerHTML = newCalc.maxElement(newArr);
@@ -100,6 +110,10 @@ minButton.addEventListener('click', () => {
 
 maxSubSumButton.addEventListener('click', () => {
     showMaxSub.innerHTML = newCalc.maxSubSum(newArr);
+});
+
+maxSubSumButton2.addEventListener('click', () => {
+    showMaxSub2.innerHTML = newCalc.maxSubSumSecond(newArr);
 });
 
 selectedButton.addEventListener('click', () => {
