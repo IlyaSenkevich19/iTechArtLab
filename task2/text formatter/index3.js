@@ -3,38 +3,52 @@ class TextFormatter {
 
     getText(str, maxNumStr, maxLen, type) {
 
+        const chunks = [];
 
-      
-        var newString;
-        if (str.length > maxLen) {
-            newString = `${str.slice(0, maxLen)} <br\/> ${str.slice(maxLen)}`;
-        }
+        for (let i = 0; i < str.length; i += maxLen) {
+            chunks.push(str.substring(i, i + maxLen));
+        };
 
-        for (let i = 0; i < maxNumStr; i++) {
-          console.log(str[i])
+        const formatWord = str => {
+            const lastWord = str.split(' ').pop();
+            return `${lastWord} <br\/>`;
+            // return lastWord;
+        };
 
-        }
+        const formatSymbol = str => {
+            const lastSymbol = str.split('').pop();
+            console.log(lastSymbol);
+            // return lastSymbol;
+        };
 
-        return newString;
+        const sentenceFormat = str => {
+           const lastSentence = str.split('.').pop();
+           console.log(lastSentence);
+        //    return lastSentence;
+        };
 
 
-        // привет как твои дела что делаешь сегодня вечером лол
+        const chooseType = el => {
+            switch (type) {
+                case 'по слову': return formatWord(el);
+                case 'по символу': return formatSymbol(el);
+                case 'по предложению': return sentenceFormat(el);
+                default: el;
+            }
+        };
+
+        const strings = chunks.filter((el, index) => index < maxNumStr);
+
+        const formatStrings = strings.map(el => {
+            chooseType(el);
+        });
 
 
+
+        const newStrings = strings.join(`<br\/>`);
+
+        return newStrings;
     }
-
-    wordFormat(str) {
-
-    }
-
-    symbolFormat(str) {
-
-    }
-
-    sentenceFormat(str) {
-
-    }
-
 }
 
 const formatter = new TextFormatter();
@@ -44,32 +58,7 @@ const showText = document.querySelector('.showText');
 
 text.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-        showText.innerHTML = formatter.getText(text.value, 12, 25, 'по слову');
+        showText.innerHTML = formatter.getText(text.value, 15, 25, 'по предложению');
     }
 });
 
-
-
-    // const lines = str.split("\n");
-        // const newlines = lines.filter((el, index) => index < maxNumStr);
-        // const linesString = newlines.join(`<br\/>`);
-
-        // const len = str.split(" ");
-        // return len[len.length - 1];
-
-        // const countingStrings = str.filter((str, maxNumStr) => str.l < maxNumStr);
-
-
-
-             // for (let el of newlines) {
-        //     if (el.length > maxLen)`${el} <br\/>`;
-
-        // }
-
-        // switch (type) {
-        //     case 'по слову': this.wordFormat(str); break;
-        //     case 'по символу': this.symbolFormat(str); break;
-        //     case 'по предложению': this.sentenceFormat(str); break;
-        // }
-
-        // return linesString;

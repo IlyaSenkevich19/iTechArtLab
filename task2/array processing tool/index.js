@@ -12,8 +12,8 @@ class ArrayCalc {
 
     maxSubSumSecond(arr) {
         let maxSum = 0;
+        let everySum = 0;
         for (let i = 0; i < arr.length; i++) {
-            let everySum = 0;
             for (let j = i; i < arr.length; j++) {
                 everySum += arr[j];
                 maxSum = Math.max(maxSum, everySum);
@@ -36,14 +36,7 @@ class ArrayCalc {
 
     mediumElement(arr) {
         let mediumEl = 0;
-
-        // arr.sort((a, b) => {
-        //     console.log(`a = ${a} , b = ${b}`);
-        //    let c = a - b;
-        //     console.log(c);
-        //     return c;
-        // })
-
+        arr.sort((a, b) =>a - b);
         let firstPart = Math.floor((arr.length - 1) / 2);
         let secondPart = Math.ceil((arr.length - 1) / 2);
         mediumEl = (arr[firstPart] + arr[secondPart]) / 2;
