@@ -1,7 +1,4 @@
-class TextFormatter {
-
-
-    getText(str, maxNumStr, maxLen, type) {
+ const getText = (str, maxNumStr, maxLen, type) => {
 
         const chunks = [];
 
@@ -10,21 +7,31 @@ class TextFormatter {
         };
 
         const formatWord = str => {
-            const lastWord = str.split(' ').pop();
-            return `${lastWord} <br\/>`;
-            // return lastWord;
+            for (let i = 0; i < str.length - 1; i++) {
+                const element = str[i].pop();
+                str[i + 1].unshift(element);
+            }
+            return str;
         };
 
         const formatSymbol = str => {
-            const lastSymbol = str.split('').pop();
-            console.log(lastSymbol);
-            // return lastSymbol;
+            for (let i = 0; i < str.length - 1; i++) {
+                const element = str[i].slice(-1);
+                if (element != '') {
+                    str[i].push('-');
+                }
+            }
+            return str;
         };
 
         const sentenceFormat = str => {
-           const lastSentence = str.split('.').pop();
-           console.log(lastSentence);
-        //    return lastSentence;
+            for (let i = 0; i < str.length - 1; i++) {
+                if (str[i].join(' ').includes('.')) {
+                    const afterPoint = str[i].join(' ').split('.').pop();
+                    str[i + 1].unshift(afterPoint);
+                }
+            }
+            return str;
         };
 
 
@@ -33,32 +40,31 @@ class TextFormatter {
                 case 'по слову': return formatWord(el);
                 case 'по символу': return formatSymbol(el);
                 case 'по предложению': return sentenceFormat(el);
-                default: el;
+                case 'без переносов': return el;
             }
         };
 
         const strings = chunks.filter((el, index) => index < maxNumStr);
-
-        const formatStrings = strings.map(el => {
-            chooseType(el);
-        });
-
-
-
-        const newStrings = strings.join(`<br\/>`);
-
+        const stringArray = strings.map(el => el.split(" "));
+        const result = chooseType(stringArray);
+        const a = result.map(el => el.join(' '));
+        const newStrings = a.join(`<br\/>`);
         return newStrings;
     }
-}
 
-const formatter = new TextFormatter();
+
+
 
 const text = document.querySelector('.textarea');
 const showText = document.querySelector('.showText');
 
+const maxNumStr = document.querySelector('.maxNumStr');
+const maxLen = document.querySelector('.maxLen');
+
 text.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-        showText.innerHTML = formatter.getText(text.value, 15, 25, 'по предложению');
+        
+        showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), 'по предложению');
     }
 });
 
