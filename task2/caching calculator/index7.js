@@ -20,12 +20,12 @@ class cachingCalc {
 
     addToCache(data) {
         this.CACHE[data.toString()] = this.operation(data);
-        resultOfOperation.innerHTML = this.operation(data);
+        result.innerHTML = this.operation(data);
     }
 
     showFromCache(key) {
-        console.log("It is from CACHE");
-        resultOfOperation.innerHTML = this.CACHE[key];
+        console.log("It is from the CACHE");
+        result.innerHTML = this.CACHE[key];
     }
 
     caching(data) {
@@ -37,14 +37,15 @@ class cachingCalc {
     }
 }
 
-const calc = new cachingCalc();
+const calculator = new cachingCalc();
 
 
-const resultOfOperation = document.querySelector('.showResualt');
-const addOperation = document.querySelector('.addOperation');
+const result = document.querySelector('.showResualt');
+const addOperat = document.querySelector('.addOperation');
 
-addOperation.addEventListener('keyup', (event) => {
+addOperat.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-     calc.caching(addOperation.value);
+        console.log('ok')
+     calculator.caching(addOperat.value);
     }
 });

@@ -3,16 +3,15 @@ const converter = (function () {
 
     const converting = str => {
         // const split = str.split('');
-        const string = str.join('');
+        // const string = str.join('');
         if (str.includes(0) && str.includes(1)) {
-          return binToDec(string);
+          return binToDec(str);
         } else {
-          return  decToBin(string);
+          return  decToBin(str);
         }
     }
 
     const binToDec = str => {
-        // return parseInt((str + '').replace(/[^01]/gi, ''), 2);
         return parseInt(str, 2);
     };
 
@@ -26,6 +25,15 @@ const converter = (function () {
     }
 })()
 
-console.log(converter.getNumber([1,1,1,1,1,0,0,0,1,1,0,1]));
-console.log(converter.getNumber([6,5,4]));
+// console.log(converter.getNumber([1,1,1,1,1,0,0,0,1,1,0,1]));
+// console.log(converter.getNumber([6,5,4]));
 
+const inputNumber = document.querySelector('.number');
+
+const showResultNum = document.querySelector('.result');
+
+inputNumber.addEventListener('keyup', (e)=>{
+    if(e.keyCode === 13) {
+        showResultNum.innerHTML = converter.getNumber(inputNumber.value);
+    }
+})

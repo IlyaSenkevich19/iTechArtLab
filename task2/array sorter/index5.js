@@ -58,3 +58,21 @@ console.log(sortArray.bubble(array));
 console.log(sortArray.simple(array));
 console.log(sortArray.quick(array));
 console.log(sortArray.selection(array));
+
+
+const parser = (value) => {
+    const newValue = value.split(' ');
+    return newValue;
+}
+
+
+
+const inputArr = document.querySelector('.newArray');
+const arr = document.querySelector('.info');
+
+const btnBubble = document.querySelector('.bubbleSort');
+
+btnBubble.addEventListener('click', () => {
+        console.log(inputArr.value)
+        arr.innerHTML =  parser(inputArr.value);
+})

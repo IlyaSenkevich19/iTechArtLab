@@ -1,11 +1,11 @@
 {
   "name": "task2",
   "version": "1.0.0",
-  "description": "",
+  "description": "My webpack project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node 5task/index5.js",
+    "start": "webpack-dev-server",
     "build": "webpack"
   },
   "keywords": [],
@@ -14,15 +14,22 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "webpack": "^4.39.2"
+    "babel-preset-env": "^1.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
     "webpack-bundle-analyzer": "^3.4.1",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   }
 }

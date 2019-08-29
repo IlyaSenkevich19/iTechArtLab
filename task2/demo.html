@@ -13,6 +13,7 @@
     <div class='wrapper'>
         <h1>JS task</h1>
         <div class='arrTool'>
+            <hr>
             <h2>1 Array proccesing tool</h2>
             <div>
                 <input class='newArray' placeholder="Введите элементы массива" />
@@ -57,28 +58,93 @@
             </div>
 
         </div>
-
+        <hr>
         <div class="dateFormatter">
-                <h2>2 Date Display Formatter</h2>
-
+            <h2>2 Date Display Formatter</h2>
+            <ol>
+                <li>"31102011"=>""</li><button class='shortDate'>shortDate</button>
+                <li>"31102011" => ""</li><button class='longDate'>longDate</button>
+                <li>("20130431", "YYYYMMDD") => </li><button class='reverseDate'>reverseDate</button>
+                <li>("20130431", "YYYYMMDD", "MM-DD-YYYY") => </li><button class='secondRevDate'>secondRevDate</button>
+                <li>("2013-04-31", "YYYY-MM-DD").fromNow() => </li><button class='dateFromNow'>dateFromNow</button>
+            </ol>
         </div>
-
+        <hr>
         <div class="textFormatter">
             <h2>3 Text Formatter</h2>
-        </div>
+            <textarea name="text" class='textarea'></textarea>
+            <div>Введите количество строк</div>
+            <input type="text" class='maxNumStr' placeholder="Количество строк">
+            <div>Введите длиннну строк</div>
+            <input type="text" class='maxLen' placeholder="Длинна строк">
+            <div>Выбери тип форматирования</div>
+            <select>
+                <option class='type' value="без переносов">без переносов</option>
+                <option class='type' value="по слову">по слову</option>
+                <option class='type' value="по символу">по символу</option>
+                <option class='type' value="по предложению">по предложению</option>
+            </select>
 
+            <div class='showText'></div>
+        </div>
+        <hr>
         <div class="stringCalc">
             <h2>4 String Calculator</h2>
+            <input class='addOperation' type="text" placeholder="Введите операцию" /> Click "enter"
+
+            <div class="showResualt">There will be a result of operation</div>
+
         </div>
+        <hr>
         <div class="arrSorter">
             <h2>5 Array Sorter</h2>
+            <div>
+                <input class='newArray' placeholder="Введите элементы массива" />
+                <button class='bubbleSort'> BubbleSort</button>
+                <button class="quickSort">quickSort</button>
+                <button class='minEl'>min element</button>
+                <button class="mediumEl">medium element</button>
+                <button class="select">medium element</button>
+            </div>
+
+            <div>
+                <h3>Array</h3>
+                <div class='info'>Our array</div>
+            </div>
+
+            <div>
+                <h3>Bubble Sort</h3>
+                <div class='show-bubbleSort'>bubbleSort</div>
+            </div>
+
+            <!-- <div>
+                <h3>Max element of array</h3>
+                <div class='show-maxEl'>max el</div>
+            </div>
+            <div>
+                <h3>Min element of array</h3>
+                <div class='show-minEl'>min el</div>
+            </div>
+            <div>
+                <h3>Medium element of array</h3>
+                <div class='show-mediumEl'>medium el</div>
+            </div> -->
         </div>
+        <hr>
         <div class="binaryConv">
             <h2>6 Binary Converter</h2>
+            <div>Введите любое чилсо в десятичной или в двоичной системе счисления</div>
+            <br>
+            <input type="text" class="number">enter
+            <div class="result">Show result</div>
         </div>
+        <hr>
         <div class="cachingCalc">
             <h2>7 Caching Calculator</h2>
+            <input class='addOperation' type="text" placeholder="Введите операцию" /> Click "enter"
+            <div class="showResualt">There will be a result of operation</div>
         </div>
+        <hr>
 
 
 
@@ -86,5 +152,13 @@
 
     </div>
 </body>
+<script async src='./caching calculator/index7.js'></script>
+<script async src='./array processing tool/index.js'></script>
+<script async src='./dateDisplayFormatter/index2.js'></script>
+<script async src='./text formatter/index3.js'></script>
+<script async src='./string calculator/index4.js'></script>
+<script async src='./array sorter/index5.js'></script>
+<script async src='./binary converter/index6.js'></script>
+
 
 </html>
