@@ -5,36 +5,39 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './main.js',
+
+  entry: {
+    app: './src/main.js'
+  },
 
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
 
-  plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin()],
+  plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin({ template: 'src/demo.html' })],
 
   module: {
-    rules: []
-  },
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          priority: -10,
-          test: /[\\/]node_modules[\\/]/
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
         }
-      },
-
-      chunks: 'async',
-      minChunks: 1,
-      minSize: 30000,
-      name: true
-    }
+      }
+    ]
   },
+
 
   devServer: {
-    open: true
-  }
+    stats: "errors-only",
+    host: process.env.HOST,
+    port: process.env.PORT,
+    open: true,
+    overlay: true,
+    contentBase: path.join(__dirname, 'src'),
+    watchContentBase: true,
+    hot: true,
+  },
 }

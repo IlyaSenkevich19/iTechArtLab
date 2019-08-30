@@ -1,4 +1,4 @@
-class cachingCalc {
+ class cachingCalc {
 
     constructor() {
         this.methods = {
