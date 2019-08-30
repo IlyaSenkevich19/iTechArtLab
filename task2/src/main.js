@@ -1,15 +1,11 @@
 import { ArrayCalc } from './modules/arrayProcessingTool.js';
 import { sortArray } from './modules/arraySorter.js';
 import { converter } from './modules/binaryConverter.js';
-import { cachingCalc } from './modules/cachingCalculator.js';
+import {  cachingCalc } from './modules/cachingCalculator.js';
 import { DateFormatter } from './modules/dateDisplayFormatter.js';
 import { StringCalc } from './modules/stringCalculator.js';
 import { getText } from './modules/textFormatter.js';
 
-
-//ArrayProccessingTool
-
-const newCalc = new ArrayCalc();
 
 
 const cache = (key, value) => {
@@ -26,145 +22,108 @@ const findElement = selector => {
     return cache(selector);
 }
 
-let input = findElement('input');
 
-const addElementButton = findElement('.addElement');
-const maxSubSumButton = findElement('.findMax');
-const maxSubSumButton2 = findElement('.findMax2');
-const minButton = findElement('.minEl');
-const maxButton = findElement('.maxEl');
-const mediumButton = findElement('.mediumEl');
-const selectedButton = findElement('.select');
+//ArrayProccessingTool
 
-const showArray = findElement('.info');
-const showMaxSub = findElement('.show-maxSub');
-const showMaxSub2 = findElement('.show-maxSub2');
-const showMaxEl = findElement('.show-maxEl');
-const showMinEl = findElement('.show-minEl');
-const showMediumEl = findElement('.show-mediumEl');
-const showSelectedArray = findElement('.show-select');
+const input = findElement('.newArray');
 
-maxButton.addEventListener('click', () => {
-    showMaxEl.innerHTML = newCalc.maxElement(newArr);
+input.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+
+        const newCalc = new ArrayCalc(input.value);
+
+        findElement('.showResults').innerHTML = `
+    Your array: ${newCalc.creatingArr(input.value)};<br\/>
+    Continuous Subarray with Maximum Sum of Elements (O(n)): ${newCalc.maxSubSum()};<br\/>
+    Continuous Subarray with Maximum Sum of Elements (O(n^2)): ;<br\/>
+    Maximum array element: ${newCalc.maxElement()};<br\/>
+    Minimal array element: ${newCalc.minElement()};<br\/>
+    Array median value: ${newCalc.mediumValue()};<br\/>
+    Maximum length of an array of increasing sequence: ${newCalc.selection()};`
+    }
 })
 
-mediumButton.addEventListener('click', () => {
-    showMediumEl.innerHTML = newCalc.mediumElement(newArr);
-})
-
-minButton.addEventListener('click', () => {
-    showMinEl.innerHTML = newCalc.minElement(newArr);
-})
-
-maxSubSumButton.addEventListener('click', () => {
-    showMaxSub.innerHTML = newCalc.maxSubSum(newArr);
-});
-
-maxSubSumButton2.addEventListener('click', () => {
-    showMaxSub2.innerHTML = newCalc.maxSubSumSecond(newArr);
-});
-
-selectedButton.addEventListener('click', () => {
-    showSelectedArray.innerHTML = newCalc.selection(newArr);
-});
-
-addElementButton.addEventListener('click', () => {
-    creatingArr(input.value);
-    showArray.innerHTML = newArr;
-    input.value = '';
-})
-
-
-const newArr = [];
-
-function creatingArr(element) {
-    newArr.push(Number(element));
-};
 
 //arraySorter
 
-const array = [1, -2, 4, 3, 9, -6];
-
-console.log(sortArray.bubble(array));
-console.log(sortArray.simple(array));
-console.log(sortArray.quick(array));
-console.log(sortArray.selection(array));
-
-
 const parser = (value) => {
-    const newValue = value.split(' ');
+    const newValue = value.split(' ').map(el => Number(el));
+    console.log(newValue)
     return newValue;
 }
 
+const inputArr = findElement('.newAr');
 
 
-const inputArr = document.querySelector('.newArray');
-const arr = document.querySelector('.info');
-
-const btnBubble = document.querySelector('.bubbleSort');
-
-btnBubble.addEventListener('click', () => {
-        console.log(inputArr.value)
-        arr.innerHTML =  parser(inputArr.value);
+inputArr.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        const value = parser(inputArr.value);
+        findElement('.sorterResult').innerHTML = `
+        Your array: ${parser(inputArr.value)};<br\/>
+        SelectionSort: ${sortArray.selection(value)};<br\/>
+        BubbleSort: ${sortArray.bubble(value)};<br\/>
+        SimpleSort: ${sortArray.simple(value)};<br\/>
+        QuickSort: ${sortArray.quick(value)};<br\/>`
+    }
 })
 
 //binaryConverter
 
-// console.log(converter.getNumber([1,1,1,1,1,0,0,0,1,1,0,1]));
-// console.log(converter.getNumber([6,5,4]));
+const inputNumber = findElement('.number');
 
-const inputNumber = document.querySelector('.number');
-
-const showResultNum = document.querySelector('.result');
-
-inputNumber.addEventListener('keyup', (e)=>{
-    if(e.keyCode === 13) {
-        showResultNum.innerHTML = converter.getNumber(inputNumber.value);
+inputNumber.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        findElement('.result').innerHTML = converter.getNumber(inputNumber.value);
     }
 })
 
 //cachingCalculator
 
+const addOperat = findElement('.add');
 
+addOperat.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        findElement('.showRes').innerHTML = cachingCalc.caching(addOperat.value);
+    }
+});
 
 //dateDisplayFormatter
 
 const dateFormatter = new DateFormatter();
 
 
-const shortDate = document.querySelector('.shortDate');
-const longDate = document.querySelector('.longDate');
-const reverseDate = document.querySelector('.reverseDate');
-const secondRevDate = document.querySelector('.secondRevDate');
-const dateFromNow = document.querySelector('.dateFromNow');
+const shortDate = findElement('.shortDate');
+const longDate = findElement('.longDate');
+const reverseDate = findElement('.reverseDate');
+const secondRevDate = findElement('.secondRevDate');
+const dateFromNow = findElement('.dateFromNow');
 
 const li = document.querySelectorAll('li');
 
-shortDate.addEventListener('click',()=>{
+shortDate.addEventListener('click', () => {
     li[0].innerHTML = `"31102011"=>"${dateFormatter.shortDate('31102011')}"`
 })
-longDate.addEventListener('click',()=>{
+longDate.addEventListener('click', () => {
     li[1].innerHTML = `"31102011" => "${dateFormatter.longDate('31102011')}"`
 })
-reverseDate.addEventListener('click',()=>{
+reverseDate.addEventListener('click', () => {
     li[2].innerHTML = `("20130431", "YYYYMMDD") => ${dateFormatter.reverseDate('20130431', 'YYYYMMDD')} `
 })
-secondRevDate.addEventListener('click',()=>{
+secondRevDate.addEventListener('click', () => {
     li[3].innerHTML = `("20130431", "YYYYMMDD", "MM-DD-YYYY") => ${dateFormatter.secondReverseDate('20130431', 'YYYYMMDD', 'MM-DD-YYYY')} `
 })
-dateFromNow.addEventListener('click',()=>{
+dateFromNow.addEventListener('click', () => {
     li[4].innerHTML = `("2013-04-31", "YYYY-MM-DD").fromNow() => ${dateFormatter.dateFromNow('2013-04-31', 'YYYY-MM-DD')} `
 })
 
 //stringCalculator
 
-const resultOfOperation = document.querySelector('.showResualt');
-const addOperation = document.querySelector('.addOperation');
-
-const calc = new StringCalc();
+const resultOfOperation = findElement('.showResualt');
+const addOperation = findElement('.addOperation');
 
 addOperation.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
+        const calc = new StringCalc();
         resultOfOperation.innerHTML = calc.operation(addOperation.value);
     }
 });
@@ -172,15 +131,14 @@ addOperation.addEventListener('keyup', (event) => {
 //textFormatter
 
 
-const text = document.querySelector('.textarea');
-const showText = document.querySelector('.showText');
+const text = findElement('.textarea');
+const showText = findElement('.showText');
 
-const maxNumStr = document.querySelector('.maxNumStr');
-const maxLen = document.querySelector('.maxLen');
+const maxNumStr = findElement('.maxNumStr');
+const maxLen = findElement('.maxLen');
 
 text.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-
         showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), 'по предложению');
     }
 });

@@ -1,51 +1,47 @@
- class cachingCalc {
+export const cachingCalc = (function(){
 
-    constructor() {
-        this.methods = {
-            "+": (a, b) => a + b,
-            "-": (a, b) => a - b,
-            "/": (a, b) => a / b,
-            "*": (a, b) => a * b,
-        };
-        this.CACHE = {};
-    }
 
-    operation(str) {
+    const methods = {
+        "+": (a, b) => a + b,
+        "-": (a, b) => a - b,
+        "/": (a, b) => a / b,
+        "*": (a, b) => a * b,
+    };
+    let CACHE = {};
+
+
+  const operations = (str) => {
         const split = str.split(" ");
         const firstElement = +split[0];
         const operation = split[1];
         const secondElement = +split[2];
-        return this.methods[operation](firstElement, secondElement);
-    }
+        return methods[operation](firstElement, secondElement);
+    };
 
-    addToCache(data) {
-        this.CACHE[data.toString()] = this.operation(data);
-        result.innerHTML = this.operation(data);
-    }
 
-    showFromCache(key) {
+   const addToCache = (data) => {
+        CACHE[data.toString()] = operations(data);
+        console.log(CACHE)
+        return operations(data);
+    };
+
+   const showFromCache = (key) => {
         console.log("It is from the CACHE");
-        result.innerHTML = this.CACHE[key];
-    }
+        return CACHE[key];
+    };
 
-    caching(data) {
-        if (this.CACHE[data.toString()]) {
-            this.showFromCache(data.toString());
+  const  caching = (data) => {
+        if (CACHE[data.toString()]) {
+            console.log('1')
+            return showFromCache(data.toString());
         } else {
-            this.addToCache(data);
+            console.log('2', CACHE)
+            return addToCache(data);
         }
+    };
+
+    return {
+        caching: caching
     }
-}
+})()
 
-const calculator = new cachingCalc();
-
-
-const result = document.querySelector('.showResualt');
-const addOperat = document.querySelector('.addOperation');
-
-addOperat.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-        console.log('ok')
-     calculator.caching(addOperat.value);
-    }
-});

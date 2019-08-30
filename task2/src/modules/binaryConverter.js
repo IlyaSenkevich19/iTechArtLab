@@ -1,9 +1,6 @@
-
 export const converter = (function () {
 
     const converting = str => {
-        // const split = str.split('');
-        // const string = str.join('');
         if (str.includes(0) && str.includes(1)) {
           return binToDec(str);
         } else {
