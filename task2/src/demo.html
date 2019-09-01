@@ -11,7 +11,7 @@
 
 <body>
     <div class='wrapper'>
-        <h1>JS task</h1>
+        <div class='title'><h1>JS tasks</h1></div>
         <div class='arrTool'>
             <hr>
             <h2>1 Array proccesing tool</h2>
@@ -34,25 +34,26 @@
         <hr>
         <div class="textFormatter">
             <h2>3 Text Formatter</h2>
-            <textarea name="text" class='textarea'></textarea>
+            <textarea name="text" class='textarea' placeholder="Enter your text"></textarea>
             <div>Введите количество строк</div>
-            <input type="text" class='maxNumStr' placeholder="Количество строк">
+            <input type="text" class='maxNumStr' placeholder="Number of rows">
             <div>Введите длиннну строк</div>
-            <input type="text" class='maxLen' placeholder="Длинна строк">
+            <input type="text" class='maxLen' placeholder="Length of rows">
             <div>Выбери тип форматирования</div>
-            <select>
-                <option class='type' value="без переносов">без переносов</option>
-                <option class='type' value="по слову">по слову</option>
-                <option class='type' value="по символу">по символу</option>
-                <option class='type' value="по предложению">по предложению</option>
-            </select>
+            <input type="text" class='format' placeholder="Enter type of formatting">
+            <ul>
+                <li class='type' value="без переносов">без переносов</li>
+                <li class='type' value="по слову">по слову</li>
+                <li class='type' value="по символу">по символу</li>
+                <li class='type' value="по предложению">по предложению</li>
+            </ul>
 
             <div class='showText'></div>
         </div>
         <hr>
         <div class="stringCalc">
             <h2>4 String Calculator</h2>
-            <input class='addOperation' type="text" placeholder="Введите операцию" /> Click "enter"
+            <input class='addOperation' type="text" placeholder="Enter operation" /> Click "enter"
 
             <div class="showResualt">There will be a result of operation</div>
 

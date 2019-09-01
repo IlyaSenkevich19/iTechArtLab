@@ -1,16 +1,57 @@
 body {
-    background-color: grey;
+    background-color: antiquewhite;
 }
 
 .wrapper {
-    width: 600px;
+    width: 900px;
     height: 100%;
-    background-color: antiquewhite;
+    background-color: #F4F7EE;
     margin: 0 auto;
 }
 
 h1 {
-    width: 50%;
-    margin: 0 auto;
-    padding-left: 200px;
+    font-family: 'Merriweather', serif;
+    position: relative;
+    color: #C44737;
+    font-size: 50px;
+    font-weight: normal;
+    padding: 8px 20px 7px 20px;
+    border-top: 4px solid;
+    border-left: 4px solid;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+}
+h2 {
+    color: #C44737;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+button {
+    color: #FFFFFF;
+    font:bold 16px arial;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    width: 160px;
+    background: linear-gradient(to bottom, #C44737, #C44737) repeat scroll 0 0 / 100% 200% rgba(0, 0, 0, 0);
+    transition: all 0.5s linear 0s;
+    border-bottom: 4px solid #ccc;
+}
+
+.title{
+    background: #F4F7EE;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 10px;
+    border: 10px solid rgba(255, 255, 255, .5);
+    outline: none;
+    color: #333;
+    width: 20%;
 }

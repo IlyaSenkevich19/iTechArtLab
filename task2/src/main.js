@@ -35,7 +35,7 @@ input.addEventListener('keyup', (e) => {
         findElement('.showResults').innerHTML = `
     Your array: ${newCalc.creatingArr(input.value)};<br\/>
     Continuous Subarray with Maximum Sum of Elements (O(n)): ${newCalc.maxSubSum()};<br\/>
-    Continuous Subarray with Maximum Sum of Elements (O(n^2)): ;<br\/>
+    Continuous Subarray with Maximum Sum of Elements (O(n^2)): ${newCalc.maxSubSumSecond()};<br\/>
     Maximum array element: ${newCalc.maxElement()};<br\/>
     Minimal array element: ${newCalc.minElement()};<br\/>
     Array median value: ${newCalc.mediumValue()};<br\/>
@@ -48,12 +48,10 @@ input.addEventListener('keyup', (e) => {
 
 const parser = (value) => {
     const newValue = value.split(' ').map(el => Number(el));
-    console.log(newValue)
     return newValue;
 }
 
 const inputArr = findElement('.newAr');
-
 
 inputArr.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
@@ -90,7 +88,6 @@ addOperat.addEventListener('keyup', (event) => {
 //dateDisplayFormatter
 
 const dateFormatter = new DateFormatter();
-
 
 const shortDate = findElement('.shortDate');
 const longDate = findElement('.longDate');
@@ -129,7 +126,6 @@ addOperation.addEventListener('keyup', (event) => {
 });
 
 //textFormatter
-
 
 const text = findElement('.textarea');
 const showText = findElement('.showText');

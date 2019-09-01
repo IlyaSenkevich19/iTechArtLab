@@ -5,7 +5,6 @@ export class ArrayCalc {
     }
 
     creatingArr(array) {
-        console.log('ok', array)
         const strArr = array.split(' ');
         const newArr = strArr.map(el => Number(el));
         return newArr;
@@ -23,13 +22,16 @@ export class ArrayCalc {
     }
 
     maxSubSumSecond() {
-        let maxSum = 0;
         let everySum = 0;
+        let maxSum = 0;
         for (let i = 0; i < this.arr.length; i++) {
-            for (let j = i; i < this.arr.length; j++) {
+            for (let j = i; j < this.arr.length; j++) {
                 everySum += this.arr[j];
-                maxSum = Math.max(maxSum, everySum);
+                if (everySum > maxSum) {
+                    maxSum = everySum;
+                }
             }
+            everySum = 0;
         }
         return maxSum;
     }
@@ -56,13 +58,27 @@ export class ArrayCalc {
     }
 
     selection() {
-        //   let maxLength = [];
-        let maxLength = this.arr.filter((a, b) => {
-            return (a > b) ? true : false;
-        })
-        return maxLength;
+        // let current = [];
+        // let maxLen = [];
+        // for (let i = 0; i < this.arr.length; i++) {
+        //     if (current.length === 0) {
+        //         current.push(this.arr[i]);
+        //     } else if (current[current.length - 1] - this.arr[i] < 0) {
+        //         current.push(this.arr[i]);
+        //     } else if (maxLen.length <= current.length) {
+        //         maxLen = current;
+        //         current = [];
+        //         current.push(this.arr[i]);
+        //     }
+        //     if (this.arr.length == i + 1 && current.length >= maxLen.length) {
+        //         maxLen = current;
+        //     }
+        // }
+        // return maxLen;
+
     }
 }
+
 
 
 
