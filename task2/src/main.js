@@ -133,8 +133,10 @@ const showText = findElement('.showText');
 const maxNumStr = findElement('.maxNumStr');
 const maxLen = findElement('.maxLen');
 
+const typeFormatting = findElement('.format');
+
 text.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-        showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), 'по предложению');
+        showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), typeFormatting.value);
     }
 });

@@ -58,24 +58,23 @@ export class ArrayCalc {
     }
 
     selection() {
-        // let current = [];
-        // let maxLen = [];
-        // for (let i = 0; i < this.arr.length; i++) {
-        //     if (current.length === 0) {
-        //         current.push(this.arr[i]);
-        //     } else if (current[current.length - 1] - this.arr[i] < 0) {
-        //         current.push(this.arr[i]);
-        //     } else if (maxLen.length <= current.length) {
-        //         maxLen = current;
-        //         current = [];
-        //         current.push(this.arr[i]);
-        //     }
-        //     if (this.arr.length == i + 1 && current.length >= maxLen.length) {
-        //         maxLen = current;
-        //     }
-        // }
-        // return maxLen;
-
+        let currentQueue = [];
+        let lengthOfQue = [];
+        for (let i = 0; i < this.arr.length; i++) {
+            if (currentQueue.length === 0) {
+                currentQueue.push(this.arr[i]);
+            } else if (currentQueue[currentQueue.length - 1] - this.arr[i] < 0) {
+                currentQueue.push(this.arr[i]);
+            } else if (lengthOfQue.length <= currentQueue.length) {
+                lengthOfQue = current;
+                currentQueue = [];
+                currentQueue.push(this.arr[i]);
+            }
+            if (this.arr.length == i + 1 && currentQueue.length >= lengthOfQue.length) {
+                lengthOfQue = currentQueue;
+            }
+        }
+        return lengthOfQue;
     }
 }
 
