@@ -1,21 +1,22 @@
 import React from "react";
 
-class Weather extends React.Component {
-
-    
-    render() {
-        const { temperature, city, country, description, humidity, error } = this.props.weather;
-        return (
-            <div>
-               <div>Temperature: {temperature}</div> 
-               <div>City: {city}</div>
-               <div>Country: {country}</div>
-               <div>Description: {description}</div>
-               <div>Humidity: {humidity} </div>
-               <div>Error: {error}</div>
-            </div>
-        )
-    }
+const Weather = props => {
+    const { temperature, city, country, description, humidity, error, icon } = props.weather;
+    const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
+    return (
+        <div>
+            {city ?
+                <div>
+                    <img src={iconURL} alt={description}/>
+                    <p>Temperature: {temperature}</p>
+                    <p>City: {city}</p>
+                    <p>Country: {country}</p>
+                    <p>Description: {description}</p>
+                    <p>Humidity: {humidity} </p>
+                </div> : <p>{error}</p>
+            }
+        </div>
+    )
 };
 
 export default Weather;

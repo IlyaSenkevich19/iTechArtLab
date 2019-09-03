@@ -5,19 +5,22 @@ import Form from "./components/Form";
 import Weather from "./components/Weather";
 import Loading from "./components/Loading";
 
+import ThreeDays from "./components/ThreeDays";
+
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
 
 class App extends React.Component {
 
   state = {
-    temperature: null,
-    city: null,
-    country: null,
-    description: null,
-    humidity: null,
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    description: undefined,
+    humidity: undefined,
     showSpinner: false,
-    error: null
+    icon: undefined,
+    error: undefined
   }
 
   getApiWeather = async (e) => {
@@ -25,18 +28,17 @@ class App extends React.Component {
 
     const city = e.target.elements.city.value;
     const day = e.target.elements[2].value;
-    console.log(day);
 
     this.setState({
       showSpinner: true
     });
 
     try {
+
       const getApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${API_KEY}&units=metric`, {
-        method: 'GET',
         mode: 'cors',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': ["image/png", 'application/json'],
           'Accept': 'application/json',
         }
       });
@@ -44,16 +46,69 @@ class App extends React.Component {
       const data = await getApi.json();
 
 
-      const forFiveDay = data.list[39].dt_txt;
-      console.log(forFiveDay);
+
+      if (data.cod === '404' || !city) {
+        this.setState({
+          temperature: undefined,
+          city: undefined,
+          country: undefined,
+          description: undefined,
+          humidity: undefined,
+          icon: undefined,
+          error: "Введите верный город",
+          showSpinner: false
+        })
+        return;
+      } else {
+        this.setState({
+          temperature: data.list[0].main.temp,
+          city: data.city.name,
+          country: data.city.country,
+          description: data.list[0].weather[0].description,
+          humidity: data.list[0].main.humidity,
+          icon: data.list[0].weather[0].icon,
+          showSpinner: false
+        });
+
+        console.log(data)
+        const fiveDay = data.list[39].dt_txt;
+        const fourDay = data.list[33].dt_txt;
+        const thirdDay = data.list[25].dt_txt;
+        const twoDay = data.list[17].dt_txt;
+        console.log("Второй день: ", twoDay);
+        console.log("Третий день: ", thirdDay);
+        console.log("Четвертый день: ", fourDay);
+        console.log("Пятый день: ", fiveDay);
+        
+
+        switch (day) {
+          case "за 1 день": return;
+          case "за 3 дня": return;
+          case "за 5 дней": return;
+          default: ;
+        }
 
 
 
 
+      }
+    }
+    catch (err) {
+      console.log("ERROR", err)
+    }
+  }
 
+  componentDidMount = async () => {
+    try {
+      const getApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Minsk&APPID=${API_KEY}&units=metric`, {
+        mode: 'cors',
+        headers: {
+          'Content-Type': ["image/png", 'application/json'],
+          'Accept': 'application/json',
+        }
+      });
 
-
-      console.log(data);
+      const data = await getApi.json();
 
       this.setState({
         temperature: data.list[0].main.temp,
@@ -61,12 +116,14 @@ class App extends React.Component {
         country: data.city.country,
         description: data.list[0].weather[0].description,
         humidity: data.list[0].main.humidity,
+        icon: data.list[0].weather[0].icon,
         showSpinner: false
       });
     }
     catch (err) {
-      console.log("ERROR", err)
+      console.log(err);
     }
+
   }
 
 
@@ -78,6 +135,9 @@ class App extends React.Component {
           <Title />
           <Form getApiWeather={this.getApiWeather} />
           <Weather weather={this.state} />
+
+          <ThreeDays  />
+
         </div>
       )
     }
