@@ -3,73 +3,72 @@ import React from "react";
 import Day from "./Day";
 
 class DaysList extends React.Component {
-
-
-
-
-
     render() {
         const { city, error, list, days } = this.props.weather;
+        console.log(days)
 
-
-        switch (days) {
-            case "за 3 день": return (
+        if (days === 'за 3 дня') {
+            return (
                 <div>
                     {city ?
                         <div className='main'>
-                            {list.map((day, index = 25) => {
-                                (day < index) ?
-                                    <div><Day chooseDay={this.props.weather} lists={day} /></div> : null
-                            })}
+                            {list.filter((el, index) => (index < 25)).map(day => <div> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
                         </div> : <p>{error}</p>
                     }
                 </div>
 
-            );
-            case "за 1 дня": return (
+            )
+        } else if (days === 'за 1 день') {
+            return (
                 <div>
                     {city ?
                         <div className='main'>
-                            {list.map((day, index = 39) => {
-                                (day < index) ?
-                                    <div><Day chooseDay={this.props.weather} lists={day} /></div> : null
-                            })}
+                            {list.filter((el, index) => (index < 39)).map(day => <div> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
                         </div> : <p>{error}</p>
                     }
                 </div>
 
-            );;
-            case "за 5 дней": return (
+
+            )
+        } else if (days === 'за 5 дней') {
+            return (
                 <div>
                     {city ?
                         <div className='main'>
-                            {list.map((day, index = 17) => {
-                                (day < index) ?
-                                    <div><Day chooseDay={this.props.weather} lists={day} /></div> : null
-                            })}
+                            {list.filter((el, index) => (index < 17)).map(day => <div> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
                         </div> : <p>{error}</p>
                     }
                 </div>
 
-            );;
-            default: ;
+            )
         }
 
 
 
 
-        // return (
-        //     <div>
-        //         {city ?
-        //             <div className='main'>
-        //                 {list.map(day =>
-        //                     <div key={day.id}><Day chooseDay={this.props.weather} lists={day} /></div>
-        //                 )}
-        //             </div> : <p>{error}</p>
-        //         }
-        //     </div>
-        // )
+
     }
+
+
+
+
+
+
 };
 
 export default DaysList;
+
+
+
+
+// return (
+//     <div>
+//         {city ?
+//             <div className='main'>
+//                 {list.map(day =>
+//                     <div key={day.id}><Day chooseDay={this.props.weather} lists={day} /></div>
+//                 )}
+//             </div> : <p>{error}</p>
+//         }
+//     </div>
+// )

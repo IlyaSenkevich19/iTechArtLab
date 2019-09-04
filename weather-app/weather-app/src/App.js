@@ -22,7 +22,7 @@ class App extends React.Component {
     icon: undefined,
     error: undefined,
     list: null,
-    days: undefined
+    days: 'за 1 день'
   }
 
   getApiWeather = async e => {
@@ -30,7 +30,9 @@ class App extends React.Component {
 
     const city = e.target.elements.city.value;
     const day = document.querySelector('select').value;
-     
+    
+    console.log(day)
+
     this.setState({
       showSpinner: true
     });
