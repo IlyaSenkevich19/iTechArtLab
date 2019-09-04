@@ -5,12 +5,41 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.error {
-  color: red
+
+h1, h2 {
+  color: grey;
+   text-align: center;
 }
+
+.icon {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.loader {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 100px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+.mainInfo, .form {
+  width: 10%;
+  margin: 0 auto;
+}
+
+
+

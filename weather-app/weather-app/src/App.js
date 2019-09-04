@@ -5,7 +5,7 @@ import Form from "./components/Form";
 import Weather from "./components/Weather";
 import Loading from "./components/Loading";
 
-import ThreeDays from "./components/ThreeDays";
+import DaysList from "./components/DaysList";
 
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
@@ -20,15 +20,17 @@ class App extends React.Component {
     humidity: undefined,
     showSpinner: false,
     icon: undefined,
-    error: undefined
+    error: undefined,
+    list: null,
+    days: undefined
   }
 
-  getApiWeather = async (e) => {
+  getApiWeather = async e => {
     e.preventDefault();
 
     const city = e.target.elements.city.value;
-    const day = e.target.elements[2].value;
-
+    const day = document.querySelector('select').value;
+     
     this.setState({
       showSpinner: true
     });
@@ -45,8 +47,6 @@ class App extends React.Component {
 
       const data = await getApi.json();
 
-
-
       if (data.cod === '404' || !city) {
         this.setState({
           temperature: undefined,
@@ -56,7 +56,9 @@ class App extends React.Component {
           humidity: undefined,
           icon: undefined,
           error: "Введите верный город",
-          showSpinner: false
+          showSpinner: false,
+          list: undefined,
+          days: undefined
         })
         return;
       } else {
@@ -67,29 +69,20 @@ class App extends React.Component {
           description: data.list[0].weather[0].description,
           humidity: data.list[0].main.humidity,
           icon: data.list[0].weather[0].icon,
-          showSpinner: false
+          showSpinner: false,
+          list: data.list,
+          days: day
         });
 
-        console.log(data)
-        const fiveDay = data.list[39].dt_txt;
-        const fourDay = data.list[33].dt_txt;
-        const thirdDay = data.list[25].dt_txt;
-        const twoDay = data.list[17].dt_txt;
-        console.log("Второй день: ", twoDay);
-        console.log("Третий день: ", thirdDay);
-        console.log("Четвертый день: ", fourDay);
-        console.log("Пятый день: ", fiveDay);
-        
 
-        switch (day) {
-          case "за 1 день": return;
-          case "за 3 дня": return;
-          case "за 5 дней": return;
-          default: ;
-        }
-
-
-
+        // const fiveDay = data.list[39].dt_txt;
+        // const fourDay = data.list[33].dt_txt;
+        // const thirdDay = data.list[25].dt_txt;
+        // const twoDay = data.list[17].dt_txt;
+        // console.log("Второй день: ", twoDay);
+        // console.log("Третий день: ", thirdDay);
+        // console.log("Четвертый день: ", fourDay);
+        // console.log("Пятый день: ", fiveDay);
 
       }
     }
@@ -117,7 +110,8 @@ class App extends React.Component {
         description: data.list[0].weather[0].description,
         humidity: data.list[0].main.humidity,
         icon: data.list[0].weather[0].icon,
-        showSpinner: false
+        showSpinner: false,
+        list: data.list,
       });
     }
     catch (err) {
@@ -135,9 +129,7 @@ class App extends React.Component {
           <Title />
           <Form getApiWeather={this.getApiWeather} />
           <Weather weather={this.state} />
-
-          <ThreeDays  />
-
+          <DaysList weather={this.state} />
         </div>
       )
     }
@@ -145,4 +137,5 @@ class App extends React.Component {
 };
 
 export default App;
+
 
