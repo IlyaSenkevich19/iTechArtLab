@@ -47,16 +47,7 @@ class App extends React.Component {
 
       if (data.cod === '404' || !city) {
         this.setState({
-          temperature: undefined,
-          city: undefined,
-          country: undefined,
-          description: undefined,
-          humidity: undefined,
-          icon: undefined,
           error: "Enter the correct city name",
-          showSpinner: false,
-          list: undefined,
-          days: undefined,
         })
         return;
       } else {
@@ -80,7 +71,6 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     try {
-
       this.setState({
         showSpinner: true
       })
