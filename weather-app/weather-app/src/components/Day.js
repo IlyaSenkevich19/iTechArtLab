@@ -21,9 +21,9 @@ const Day = props => {
         <div>
             <p className='date'>{parseDate(date)}</p>
             <img className='small-icon' src={iconURL} alt={description} />
-            <p>Temperature: {temp}</p>
-            <p>Description: {description}</p>
-            <p>Humidity: {humidity}</p>
+            <p className='info'>Temperature: {temp}</p>
+            <p className='info'>Description: {description}</p>
+            <p className='info'>Humidity: {humidity}</p>
         </div>
     );
 

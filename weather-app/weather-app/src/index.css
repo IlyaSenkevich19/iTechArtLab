@@ -63,12 +63,12 @@ header {
 
 .small-icon{
   width: 100px;
+  padding-left: 45px;
   height: 100px;
 }
 
 .date2 {
   display: flex;
-  justify-content: ;
   flex-direction: column;
   color:#0000FF;
   position: relative;
@@ -203,6 +203,11 @@ button {
   text-align: center;
   font-size: 50px;
   color: #0000FF;
+}
+
+.info {
+  color: blue;
+  text-align: center;
 }
 
 
