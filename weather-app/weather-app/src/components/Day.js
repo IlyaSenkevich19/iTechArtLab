@@ -6,9 +6,21 @@ const Day = props => {
     const humidity = props.lists.main.humidity;
     const icon = props.lists.weather[0].icon;
     const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
+    const date = props.lists.dt_txt;
+
+    const parseDate = (date) => {
+        const split = date.split(' ');
+        const time = split[1].split(':');
+        const newTime = [time[0], time[1]].join(':');
+        const day = split[0].split('-').reverse().join('-');
+        const newDate = [day, newTime].join(' ');
+        return newDate;
+    }
+
     return (
         <div>
-            <img src={iconURL} alt={description} />
+            <p className='date'>{parseDate(date)}</p>
+            <img className='small-icon' src={iconURL} alt={description} />
             <p>Temperature: {temp}</p>
             <p>Description: {description}</p>
             <p>Humidity: {humidity}</p>

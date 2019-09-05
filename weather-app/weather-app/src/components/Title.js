@@ -3,8 +3,10 @@ import React from "react";
 const Title = () => {
     return (
         <div>
-            <h1>Weather App</h1>
-            <h2>Узнай погоду!</h2>
+            <header>
+                <h1>Weather App</h1>
+                <h2>Find out the weather!</h2>
+            </header>
         </div>
     );
 };

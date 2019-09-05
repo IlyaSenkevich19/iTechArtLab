@@ -1,20 +1,28 @@
 import React from "react";
 
 const Weather = props => {
-    const { temperature, city, country, description, humidity, error, icon, list } = props.weather;
+    const { temperature, city, country, description, humidity, error, icon } = props.weather;
     const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
     return (
         <div className='mainInfo'>
             {city ?
-                <div>
-                    <img className='icon' src={iconURL} alt={description}/>
-                    <p>Temperature: {temperature}</p>
-                    <p>City: {city}</p>
-                    <p>Country: {country}</p>
-                    <p>Description: {description}</p>
-                    <p>Humidity: {humidity}</p>
-                    <p>List: {list[0].dt_txt}</p>
-                </div> : <p>{error}</p>
+                <div className='weather'>
+                    <div className='mainCont'>
+
+                        <p className='city'>{city}, {country}</p>
+                        <div className='date'>
+                            <img className='icon' src={iconURL} alt={description} />
+                            <p className='temp'>{Math.floor(temperature)}*C</p>
+                        </div>
+                        <div className="date2">
+                            <p className='desc'>{description}</p>
+                            <p className='humidity'>Humidity: {humidity}</p>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </div> : <p className='error'>{error}</p>
             }
         </div>
     )

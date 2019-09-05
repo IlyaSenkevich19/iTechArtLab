@@ -1,9 +1,8 @@
 import React from "react";
-// import Loader from "react-loader-spinner";
 
 const Loading = () => {
     return (
-        <div className='loader'>Loading...</div>
+        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
     )
 };
 

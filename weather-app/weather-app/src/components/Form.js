@@ -4,7 +4,7 @@ const Form = props => {
     return (
         <div className='form'>
             <form  id='data' onSubmit={props.getApiWeather}>
-                <input name='city'  placeholder='City' />
+                <input className='input' name='city' placeholder='City' />
                 <button>Get Weather</button>
             </form>
             <select className='select' form='data'>
