@@ -1,0 +1,139 @@
+@media screen and (max-width: 1250px) {
+
+    .thumb {
+    width: 250px;
+    height:250px;
+    }
+    .description__title {
+        width: 200px;
+    }  
+    .imgWrapper {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1189px) {
+
+    .thirdSection {
+        flex-wrap: wrap;
+    }
+    .secondSection {
+     flex-wrap: wrap;
+     width: 700px;
+     height: 400px;
+     margin: 0 auto;
+    }
+
+    .container-main {
+        width: 700px;
+    }
+
+    .imgWrapper {
+      width: 500px;
+    }
+
+    .sections {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .firstSection {
+        flex-direction: column;
+        justify-content: space-around;
+        height: 700px; 
+    }
+    .row-container {
+        display: flex;
+        justify-content: space-between;
+       flex-wrap: wrap;
+        height: 300px;
+    }
+    .row {
+        height: 400px;
+    }
+    nav {
+        height: 950px;
+    }
+
+    .container-footer {
+        flex-wrap: wrap;
+        width: 900px;
+    }
+    .form, .sections__title {
+        margin: 0 auto;
+    }
+    .sections__content {
+        width: 300px;
+        margin: 0 auto
+    }
+ 
+   
+}
+
+@media screen and (max-width: 920px) {
+  .thirdSection, .firstSection{
+      padding: 50px 0px;
+  }
+    .row {
+        height: 390px;
+    }
+    .row-container {
+        width: 500px;
+        height: 400px;
+    }
+    .container-footer {
+        flex-direction: column;
+        width: 600px;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    .links {
+        display: none;
+    }
+    .article__btn {
+        margin-left: 200px;
+    }
+    .firstSectionWrap__title, .firstSectionWrap__subtitle {
+        width: 500px;
+    }
+    .article__title, .article__desc {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .article__btn {
+        margin: 0 auto;
+    }
+    .firstSectionWrap {
+        width: 400px;
+    }
+    .firstSection {
+        padding-top: 100px;
+    }
+    .article__desc {
+      padding: 0px;
+      margin: 0 auto;
+    }
+    .secondSection {
+        width: 580px;
+    }
+    .second-title {
+        width: 200px;
+    }
+    .article {
+        padding-bottom: 50px;
+    }
+    
+    .description__title{
+        padding: 0px;
+    }
+    .articleWrap {
+        flex-wrap: wrap;
+    }
+    .thumb {
+        display: none;
+    }
+    nav {
+        height: 950px;
+    }
+}
+

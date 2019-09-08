@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='../css/style-tagFooter.css' type='text/css' />
     <link rel='stylesheet' href='../css/style-tagHeader.css' type='text/css' />
     <link rel='stylesheet' href='../css/style-tagNav.css' type='text/css' />
-    <link rel='stylesheet' href='../css/media.css' type='text/css' />
+    <link rel='stylesheet' href='../css/media2.css' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
@@ -19,60 +19,70 @@
 <body>
 
     <header>
-        <div class='headerLogo'>SITE NAME</div>
-        <ul class='headerWrapper'>
-            <li class="headerWrapper__button">HOME</li>
-            <li class="headerWrapper__button">ABOUT</li>
-            <li class="headerWrapper__button">SERVICE</li>
-            <li class="headerWrapper__button">PORTFOLIO</li>
-            <li class="headerWrapper__button">CONTACT</li>
-        </ul>
+        <div class='container container__header'>
+            <div class='headerLogo'>SITE NAME</div>
+            <div class='headerWrapper'>
+                <div class="headerWrapper__button">HOME</div>
+                <div class="headerWrapper__button">ABOUT</div>
+                <div class="headerWrapper__button">SERVICE</div>
+                <div class="headerWrapper__button">PORTFOLIO</div>
+                <div class="headerWrapper__button">CONTACT</div>
+            </div>
+        </div>
     </header>
 
     <nav>
         <div class='navWrapper'>
             <div class='image'>
-                <img style=' min-width: 100%; min-height: 100%;' src="../html/img/1.png" alt="background-img">
+                <img src="../html/img/1.png" alt="background-img">
             </div>
             <div class="imgWrapper">
-                <div class="imgWrapper__logo"><img src="../html/img/switch-arrows-button.svg" alt="switch-arrows">
+                <div class="imgWrapper__logo"><img src="./img/cir2.png" style='height: 70px; padding-right: 1px;' alt="switch-arrows"><img src="./img/cir.png" style='height: 70px' alt="switch-arrows">
                 </div>
-                <div class="imgWrapper__title">
-                    CLIVUAM TINC - NUNC DIGNISSIM RISES ID METUS
-                </div>
+
+                <div class="imgWrapper__title first-title">CLIVUAM TINC <img src="./img/line.png"
+                        style='padding-bottom: 12px' alt="line" /></div>
+                <div class="imgWrapper__title second-title">NUNC DIGNISSIM RISES ID METUS</div>
+
                 <div class="imgWrapper__link">
                     <a href='http://wallpapperswide.com/'>http://wallpapperswide.com/</a>
                 </div>
             </div>
         </div>
         <div class='row'>
-            <div class="rowWrapper">
-                <div class='logo'><img  src="../html/img/rocket-ship-outline-on-black-circle-background.svg" alt="logo"></div>
-                <div class="description">
-                    <div class="description__title"><strong>ALIQUAM TINCIDUNT</strong></div>
-                    <div class="description__content">Donec nec justo eget felis facilities fermentum. Aliquam porttitor
-                        mauris sit amet orci. Aenean dignissim pellentesq <br /> <a
-                            style='color:#e84c3d; cursor: pointer; '>=> more</a>
+            <div class="row-container">
+                <div class="rowWrapper">
+                    <div class='logo'><img src="./img/rocket.png" alt="logo">
+                    </div>
+                    <div class="description">
+                        <div class="description__title">ALIQUAM TINCIDUNT</div>
+                        <div class="description__content">Donec nec justo eget felis facilities fermentum. Aliquam
+                            porttitor
+                            mauris sit amet orci. Aenean dignissim pellentesq <a
+                                style='color:#e84c3d; cursor: pointer; '>=> more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="rowWrapper">
-                <div class='logo'><img src="../html/img/shield.svg" alt="logo"></div>
-                <div class="description">
-                    <div class="description__title"><strong>CRAS ORNARE TRISTIQU</strong></div>
-                    <div class="description__content">Jonec nec justo eget felis facilities fermentum. Aliquam porttitor
-                        mauris sit amet orci. Aenean dignissim pellentesq <br /> <a
-                            style='color:#e84c3d; cursor: pointer; '>=> more</a>
+                <div class="rowWrapper">
+                    <div class='logo'><img src="./img/sheild.png" alt="logo"></div>
+                    <div class="description">
+                        <div class="description__title">CRAS ORNARE TRISTIQU</div>
+                        <div class="description__content">Jonec nec justo eget felis facilities fermentum. Aliquam
+                            porttitor
+                            mauris sit amet orci. Aenean dignissim pellentesq <a
+                                style='color:#e84c3d; cursor: pointer; '>=> more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="rowWrapper">
-                <div class='logo'><img src="../html/img/fire-extinguisher-sign.svg" alt="logo"></div>
-                <div class="description">
-                    <div class="description__title"><strong>VIVAMUS VESTIBULUM</strong></div>
-                    <div class="description__content">Jonec nec justo eget felis facilities fermentum. Aliquam porttitor
-                        mauris sit amet orci. Aenean dignissim pellentesq <br /> <a
-                            style='color:#e84c3d; cursor: pointer; '>=> more</a>
+                <div class="rowWrapper">
+                    <div class='logo'><img src="./img/fire.png" alt="logo"></div>
+                    <div class="description">
+                        <div class="description__title">VIVAMUS VESTIBULUM</div>
+                        <div class="description__content">Jonec nec justo eget felis facilities fermentum. Aliquam
+                            porttitor
+                            mauris sit amet orci. Aenean dignissim pellentesq <a
+                                style='color:#e84c3d; cursor: pointer; '>=> more</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,161 +90,176 @@
     </nav>
 
     <main>
-
-        <div class='firstSection'>
-            <div class="firstSectionWrap">
-                <h2 class='firstSectionWrap__title'>DONEC NEC JUSTO EGET FELIS FACILISIS FERMENTUM. ALIQUAM PORTTITOR SIT AMET ORCI.
-                    AEMEAN DIGNISSIM PELLENTESQUE FELIS</h2>
-                <hr />
-                <div class='firstSectionWrap__subtitle'>Civamus vestibulum nulla nec ante</div>
-                <hr />
-                <div class='articleWrap'>
-                    <div class="article">
-                        <h4 class='article__title'>Sed egestas anteet</h4>
-                        <p class='article__desc'>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium accusamus rerum,
-                            aperiam velit amet deleniti nemo et harum dignissimos labore sunt reiciendis a dolores quis.
-                            Rem consectetur fugiat vitae dolores.
-                        </p>
-                        <button class="article__btn">MORE</button>
-                    </div>
-                    <div class="article">
-                        <h4 class='article__title'>Aemean egestas anteet</h4>
-                        <p class='article__desc'>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum officia nam aliquid adipisci
-                            autem voluptatum nemo veniam itaque sapiente recusandae, explicabo magni, molestiae quod.
-                            Excepturi ad molestiae non quas velit?
-                        </p>
-                        <button class='article__btn'>MORE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pict">
-                <img src="../html/img/mid_300256_426393.jpg" alt="img" class='thumb'/>
-            </div>
-        </div>
-
-        <div class="secondSection">
-            <div class='descWrap'>
-                <div class="descWrap__logo"><img src="../html/img/round-account-button-with-user-inside.svg" alt="user"></div>
-                <div class="info">
-                    <h2 class="info__title">DONEC NEC JUSTO EGET</h2>
-                    <div class="info__desc">"Ede semper est, vitae luctus metus libero eu augue. Morb sipo ipiscing,
-                        commodo quis, gravida ..." - Kohn Doe / company name</div>
-                </div>
-            </div>
-            <div class='icon-search'>
-                <h2 class="icon-search__title">MORBI VITAE LUCTUS</h2>
-                <input class='search' placeholder="enter your email id here ..." type='text' />
-                <button class='icon-search__btn'>
-                    SUBCRIBE
-                </button>
-            </div>
-        </div>
-
-        <div class="thirdSection">
-            <div class="sections">
-                <h2 class="sections__title">ALIQUAM TINCIDUNT</h2>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img src="../html/img/3660_800.jpg" alt="img" class='avatar'>
-                    </div>
-                    <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
-                        porttitor<br />
-                        <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
-                </div>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img src="../html/img/second-picture.jfif" alt="img"
-                            class='avatar'></div>
-                    <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
-                        porttitor<br />
-                        <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
-                </div>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img src="../html/img/mid_300256_426393.jpg" alt="img"
-                            class='avatar'></div>
-                    <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
-                        porttitor<br />
-                        <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
-                </div>
-                <hr />
-            </div>
-            <div class="sections">
-                <h2 class="sections__title">NUNC DIGNISSIM RISU</h2>
-                <div class='form'>
-                    <div class='form__desc'>
-                        Sed egestas, ante et vulputat, eros pede semper est, vitae luctus metus liber
-                    </div>
-                    <input class='form__input' placeholder='name ...' type="text" />
-                    <br />
-                    <input class='form__input' placeholder='email ...' type="text" />
-                    <br />
-                    <textarea class='form__input' placeholder='your query ...'></textarea>
-                    <br />
-                    <button class='article__btn send-btn'>SEND</button>
-                </div>
-            </div>
-            <div class="sections">
-                <h2 class="sections__title">ALIQUAM TINCIDUNT</h2>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img style='margin: 10px 10px;' src="../html/img/home.svg"
-                            alt="home"></div>
-                    <div class='contact-desc'>
-                        <div class='contact-desc__title'>Address</div>
-                        <div style='padding-left: 20px; font-family: "Lato", sans-serif; padding-top: 10px; ' class='contact-desc__info'>some block, street, country
+        <div class="container-main">
+            <div class='firstSection'>
+                <div class="firstSectionWrap">
+                    <div class='firstSectionWrap__title'>DONEC NEC JUSTO EGET FELIS FACILISIS FERMENTUM. ALIQUAM
+                        PORTTITOR
+                        SIT AMET ORCI.
+                        AEMEAN DIGNISSIM PELLENTESQUE FELIS</div>
+                    <hr />
+                    <div class='firstSectionWrap__subtitle'>Civamus vestibulum nulla nec ante</div>
+                    <hr />
+                    <div class='articleWrap'>
+                        <div class="article">
+                            <div class='article__title'>Sed egestas anteet</div>
+                            <p class='article__desc'>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium accusamus rerum,
+                                aperiam velit amet deleniti nemo et harum dignissimos labore sunt reiciendis a dolores
+                                quis.
+                                Rem consectetur fugiat vitae dolores.
+                            </p>
+                            <button class="article__btn">MORE</button>
+                        </div>
+                        <div class="article">
+                            <div class='article__title'>Aemean egestas anteet</div>
+                            <p class='article__desc'>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum officia nam aliquid
+                                adipisci
+                                autem voluptatum nemo veniam itaque sapiente recusandae, explicabo magni, molestiae
+                                quod.
+                                Excepturi ad molestiae non quas velit?
+                            </p>
+                            <button class='article__btn'>MORE</button>
                         </div>
                     </div>
                 </div>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img style='margin: 10px 10px;'
-                            src="../html/img/telephone-symbol-button.svg" alt="phone"></div>
-                    <div class='contact-desc'>
-                        <div class='contact-desc__title'>Phone</div>
-                        <div class='contact-desc__info'>
-                            <ul class='list'>
-                                <li class='items'>(000) 777 777 7777</li>
-                                <li class='items'>(000) 888 888 8888</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="pict">
+                    <img src="./img/big-bird.png" alt="img" class='thumb' />
                 </div>
-                <hr />
-                <div class="sections__content">
-                    <div class='sections__content-avatar'><img style='margin: 10px 10px;' src="../html/img/email.svg"
-                            alt="email"></div>
-                    <div class='contact-desc'>
-                        <div class='contact-desc__title'>Email us</div>
-                        <div class='contact-desc__info'>
-                            <ul class='list'>
-                                <li class='items'>info@sitename.com</li>
-                                <li class='items'>sales@sitename.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr />
             </div>
 
-        </div>
+            <div class="secondSection">
+                <div class='descWrap'>
+                    <div class="descWrap__logo"><img src="./img/user.png" alt="user">
+                    </div>
+                    <div class="info">
+                        <div class="info__title">DONEC NEC JUSTO EGET</div>
+                        <div class="info__desc">"Ede semper est, vitae luctus metus libero eu augue. Morb sipo ipiscing,
+                            commodo quis, gravida ..." - Kohn Doe / company name</div>
+                    </div>
+                </div>
+                <div class='icon-search'>
+                    <div class="icon-search__title">MORBI VITAE LUCTUS</div>
+                    <input class='search' placeholder="enter your email id here ..." type='text' />
+                    <button class='icon-search__btn'>
+                        SUBCRIBE <img style='padding-bottom: 2px' src="./img/arrow.png" alt="arrow">
+                    </button>
+                </div>
+            </div>
 
+            <div class="thirdSection">
+                <div class="sections">
+                    <div class="sections__title">ALIQUAM TINCIDUNT</div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar'><img src="./img/face.png" alt="img" class='avatar'>
+                        </div>
+                        <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
+                            porttitor<br />
+                            <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
+                    </div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar'><img src="./img/Layer 5.png" alt="img" class='avatar'>
+                        </div>
+                        <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
+                            porttitor<br />
+                            <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
+                    </div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar'><img src="./img/small-bird.png" alt="img" class='avatar'>
+                        </div>
+                        <div class='sections__content-text'>Donec nec justo eget felis facilisis fermin. Aliquam
+                            porttitor<br />
+                            <a style='color:#e84c3d; cursor: pointer; '>=> more</a></div>
+                    </div>
+                    <hr />
+                </div>
+                <div class="sections">
+                    <div class="sections__title">NUNC DIGNISSIM RISU</div>
+                    <div class='form'>
+                        <div class="form-container">
+                            <div class='form__desc'>
+                                Sed egestas, ante et vulputat, eros pede semper est, vitae luctus metus liber
+                            </div>
+                            <input class='form__input' placeholder='name ...' type="text" />
+
+                            <input class='form__input' placeholder='email ...' type="text" />
+
+                            <textarea class='form__textarea' placeholder='your query ...'></textarea>
+
+                            <button class='article__btn send-btn'>SEND
+                                <img style='padding-bottom: 3px;' src="./img/arrow.png" alt="arrow">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sections">
+                    <div class="sections__title">ALIQUAM TINCIDUNT</div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar icons'><img src="./img/home.png" alt="home"></div>
+                        <div class='contact-desc'>
+                            <div class='contact-desc__title'>Address</div>
+                            <div style='padding-left: 20px; font-family: "Lato", sans-serif; padding-top: 10px; '
+                                class='contact-desc__info'>some block, street name, city name, country
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar icons'><img src="./img/phone.png" alt="phone"></div>
+                        <div class='contact-desc'>
+                            <div class='contact-desc__title'>Phone</div>
+                            <div class='contact-desc__info'>
+                                <ul class='list'>
+                                    <li class='items'>(000) 777 777 7777</li>
+                                    <li class='items'>(000) 888 888 8888</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="sections__content">
+                        <div class='sections__content-avatar icons'><img src="./img/mail.png" alt="email"></div>
+                        <div class='contact-desc'>
+                            <div class='contact-desc__title'>Email us</div>
+                            <div class='contact-desc__info'>
+                                <ul class='list'>
+                                    <li class='items'>info@sitename.com</li>
+                                    <li class='items'>sales@sitename.com</li>
+                                    <li class='items'>company@sitename.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <footer>
-        <div class='footerWrapper'>
-            <div class="footerWrapper__btn">Home</div>
-            <div class="footerWrapper__btn">About</div>
-            <div class="footerWrapper__btn">Service</div>
-            <div class="footerWrapper__btn">Portfolio</div>
-            <div class="footerWrapper__btn">Contact</div>
-        </div>
-        <div class='footerLogosWrapper'>
-            <div class="footerLogosWrapper__socials"><img src="../html/img/facebook.svg" alt="facebook"></div>
-            <div class="footerLogosWrapper__socials"><img src="../html/img/twitter.svg" alt="twitter"></div>
-            <div class="footerLogosWrapper__socials"><img src="../html/img/linkedin.svg" alt="linkedin"></div>
+        <div class="container-footer">
+            <div class='footerWrapper'>
+                <div class="footerWrapper__btn">
+                    <div class='footerWrapper__btn-link'>
+                        <a>Home</a><div style='color: grey'>/</div><a>About</a><div style='color: grey'>/</div><a>Services</a><div style='color: grey'>/</div><a>Portfolio</a><div style='color: grey'>/</div><a>Contact</a>
+                    </div>
+                    <div class='links' style='width: 800px'>
+                        <a class='footerWrapper__links-colored'>Designed:www.altemolateneeds.com</a><a style='color: grey'> / Images
+                            from:wwwwallpaperswide.com</a><a style='color: grey'> / Copyright(c) website name.</a>
+                    </div>
+                </div>
+            </div>
+            <div class='footerLogosWrapper'>
+                <div class="footerLogosWrapper__socials"><img src="./img/facebook.png" alt="facebook"></div>
+                <div class="footerLogosWrapper__socials"><img src="./img/twitter.png" alt="twitter"></div>
+                <div class="footerLogosWrapper__socials"><img src="./img/linkedin.png" alt="linkedin"></div>
+            </div>
         </div>
     </footer>
 

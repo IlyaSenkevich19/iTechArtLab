@@ -4,27 +4,50 @@
     font-family: 'Fjalla One', sans-serif;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    padding: 0px 10px 0px 220px;
+    align-items: center; 
+}
+
+.container-footer {
+  width: 1170px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footerWrapper__btn {
     font-family: 'Fjalla One', sans-serif;
     cursor: pointer;
     letter-spacing: 1px;
-    padding: 0px 0px 0px 30px;
+    font-size: 14px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch
+  }
+
+  .footerWrapper__btn-link {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
   }
 
 .footerLogosWrapper {
-    width:50%;
+    width:150px;
     color: white;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px 130px 0px 0px;
+    justify-content: space-between;
 }
 
 .footerLogosWrapper__socials {
     cursor: pointer;
-    padding: 0px 30px 0px 0px;
 }
+
+.footerWrapper__links-colored{
+    color: #e84c3d;
+}
+

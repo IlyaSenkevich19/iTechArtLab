@@ -1,6 +1,5 @@
 .navWrapper {
-   height: 70%;
-   width: 100%;
+   height: 560px;
    background-color: grey;
    font-family: 'Fjalla One', sans-serif;
  }
@@ -11,7 +10,7 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  max-height: 560px;
 }
 
 .image > img {
@@ -21,74 +20,76 @@
 }
 
 .row {
-    height: 30%;
+    height: 277px;
     background-color: #e7e7e7;
-    display: flex;
-    justify-content: space-around;
-    padding-left: 250px;
-    padding-right: 250px;
+   display: flex;
+   align-items: center;
+}
+
+.row-container {
+   width: 1170px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .rowWrapper {
-   width:36%;
-   height:100%;
+   width:370px;
+   height:121px;
     box-sizing: border-box;
     display: flex;
  }
 
  .description {
-    height: 150px;
-    width: 50px;
- }
-
- .logo {
-    padding: 30px 30px 0px 0px;
-    height: 10%;
-    min-width: 10%;
+    height: 120px;
+    width: 270px;
+    padding-left: 30px;
  }
 
  .description__title {
-   width: 350px;
+   width: 290px;
    font-family: 'Fjalla One', sans-serif;
-   font-size: 1.3vw;
-   padding-bottom: 20px;
-   padding-top: 20px;
-   letter-spacing: 2px;
+   font-size: 21px;
+   font-weight:600;
+   padding-bottom: 30px;
 }
 
 .description__content {
-   width: 300px;
+   width: 270px;
+   height: 76px;
    font-family: 'Lato', sans-serif;
    color: grey;
-   font-size: 12px;
+   font-size: 14px;
    letter-spacing: 1px;
-   line-height: 2;
+   line-height: 1.5;
 }
 
  .imgWrapper {
-    position: relative;
-    left: 300px;
-    bottom: 250px;
-    width:400px;
+   position: relative;
+   max-width: 1170px;
+   height: 210px;
+   margin: 0 auto;
+   bottom: 290px;
 }
 
-.imgWrapper__logo {
-    padding-bottom: 10px;
-    margin-left: -40px;
+.first-title {
+padding-top: 30px;
 }
+
+.second-title {
+width: 600px;
+padding: 20px 0px;
+}
+
 
 .imgWrapper__title {
    color: white;
-   width: 700px;
-   font-size: 1.5vw;
-   letter-spacing: 4px;
-   padding-bottom: 10px;
-   margin-left: -40px;
+   font-size: 31px;
 }
 
 .imgWrapper__link > a {
    color: #e84c3d;
    text-decoration: none;
-   letter-spacing: 1px;
-   margin-left: -40px;
+   font-size: 15px;
 }
