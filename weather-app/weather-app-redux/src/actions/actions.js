@@ -19,28 +19,59 @@ export const itemsIsLoading = bool => {
     };
 }
 
-export const itemsFetchData = url => {
-    return (dispatch) => {
-        dispatch(itemsIsLoading(true));
+export const setForecast = forecast => {
+    return {
+        type: 'SET_FORECAST',
+        payload: forecast
+    }
+}
 
-        fetch(url, {
-            mode: 'cors',
-            headers: {
-                'Content-Type': ["image/png", 'application/json'],
-                'Accept': 'application/json',
+export const chooseDay = type => {
+    return {
+        type: "CHOOSE_TYPE",
+        payload: type
+    }
+}
+export const selectCity = city => {
+    console.log(city);
+    return {
+        type: "SELECT_CITY",
+        payload: city
+    }
+}
+
+export const itemsFetchData = url => dispatch => {
+
+    dispatch(itemsIsLoading(true));
+
+    fetch(url, {
+        mode: 'cors',
+        headers: {
+            'Content-Type': ["image/png", 'application/json'],
+            'Accept': 'application/json',
+        }
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
             }
+            dispatch(itemsIsLoading(false));
+            return response;
         })
-            .then((response) => {
-                if (!response.ok) {
-                    throw Error(response.statusText);
-                }
+        .then(response => response.json())
+        .then(items => {
+            if (items.cod !== '404') {
+                dispatch(setForecast(items.list.map(day => {
+                    return {
+                        temp: day.main.temp,
+                        description: day.weather[0].description,
+                        icon: day.weather[0].icon,
+                        day: day.dt
+                    }
+                })))
+                dispatch(itemsFetchDataSuccess(items))
+            } 
+        })
+        .catch(() => dispatch(itemsHasErrored(true)));
 
-                dispatch(itemsIsLoading(false));
-
-                return response;
-            })
-            .then(response => response.json())
-            .then(items => dispatch(itemsFetchDataSuccess(items)))
-            .catch(() => dispatch(itemsHasErrored(true)));
-    };
 }

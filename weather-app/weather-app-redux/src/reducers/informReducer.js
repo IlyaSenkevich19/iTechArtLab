@@ -1,7 +1,11 @@
 const initialState = {
     hasErrored: false,
     isLoading: false,
-    items: []
+    items: [],
+    forecast: [{}],
+    typeForecast: 'за 1 день',
+    selectCity: 'Minsk'
+
 }
 
 const itemsFetchData = (state, data) => {
@@ -25,6 +29,28 @@ const isLoading = (state, bool) => {
      }
  }
 
+ const setForecastInfo = (state, forecast) => {
+     return {
+         ...state,
+        forecast: forecast
+     }
+ }
+
+ const chooseDayType = (state, type) => {
+     return {
+         ...state,
+         typeForecast: type
+     }
+ }
+
+ const selectCityName = (state, city) => {
+     console.log(city);
+     return {
+         ...state,
+         selectCity: city
+     }
+ }
+
 export const informReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ITEMS_HAS_ERRORED' :
@@ -33,6 +59,12 @@ export const informReducer = (state = initialState, action) => {
             return isLoading(state, action.payload);
         case 'ITEMS_FETCH_DATA_SUCCESS' :
             return itemsFetchData(state, action.payload);
+        case "SET_FORECAST":
+            return setForecastInfo(state, action.payload);
+        case "CHOOSE_TYPE":
+            return chooseDayType(state, action.payload);
+        case "SELECT_CITY":
+            return selectCityName(state, action.payload)
         default: return state;
     }
 }

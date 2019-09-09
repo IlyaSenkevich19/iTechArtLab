@@ -2,30 +2,30 @@ import React, { Component } from "react";
 
 class Weather extends Component {
     render() {
-        const { data } = this.props;
-        // const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
-        
+        const city = this.props.city;
+        const { temp, description, icon  } = this.props.forecast[0];
+        const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
+
         return (
             <div className='mainInfo'>
-                {/* {city ?
+                {city ?
                     <div className='weather'>
                         <div className='mainCont'>
 
-                            <p className='city'>{city}, {country}</p>
+                            <p className='city'>{city}</p>
                             <div className='date'>
                                 <img className='icon' src={iconURL} alt={description} />
-                                <p className='temp'>{Math.floor(temperature)}*C</p>
+                                <p className='temp'>{Math.floor(temp)}*C</p>
                             </div>
                             <div className="date2">
                                 <p className='desc'>{description}</p>
-                                <p className='humidity'>Humidity: {humidity}</p>
                             </div>
                         </div>
                         <div>
 
                         </div>
-                    </div> : <p className='error'>{error}</p>
-                } */}Hello
+                    </div> : <p className='error'>Enter the correct city</p>
+                }
             </div>
         )
     }
