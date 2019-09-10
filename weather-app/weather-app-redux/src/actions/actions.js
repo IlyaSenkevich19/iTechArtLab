@@ -33,10 +33,16 @@ export const chooseDay = type => {
     }
 }
 export const selectCity = city => {
-    console.log(city);
     return {
         type: "SELECT_CITY",
         payload: city
+    }
+}
+
+export const onSubmitSuccess = type => {
+    return {
+        type: "SET_SUBMIT_TYPE",
+        payload: type
     }
 }
 
@@ -60,6 +66,7 @@ export const itemsFetchData = url => dispatch => {
         })
         .then(response => response.json())
         .then(items => {
+            console.log(items)
             if (items.cod !== '404') {
                 dispatch(setForecast(items.list.map(day => {
                     return {
@@ -69,8 +76,10 @@ export const itemsFetchData = url => dispatch => {
                         day: day.dt
                     }
                 })))
-                dispatch(itemsFetchDataSuccess(items))
-            } 
+                dispatch(itemsFetchDataSuccess(items));
+                dispatch(onSubmitSuccess(true))
+                
+            }
         })
         .catch(() => dispatch(itemsHasErrored(true)));
 

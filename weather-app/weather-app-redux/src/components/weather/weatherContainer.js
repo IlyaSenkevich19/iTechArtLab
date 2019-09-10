@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Weather from './Weather';
 
-import { itemsFetchData, chooseDay, selectCity } from '../../actions/actions';
+import { itemsFetchData, chooseDay, selectCity, onSubmitSuccess } from '../../actions/actions';
 import Loading from "../Loading";
 import Form from "../Form";
 import WeatherList from './WeatherList';
+
 
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
 class WeatherContainer extends React.PureComponent {
 
 
-    getCity = (e) => {
+    getCity = async (e) => {
         e.preventDefault();
         const cityName = e.target.elements.city.value;
         const day = document.querySelector('select').value;
@@ -35,21 +36,27 @@ class WeatherContainer extends React.PureComponent {
         }
         if (this.props.loading) {
             return (<Loading />);
+<<<<<<< HEAD
         } else {
             console.log(this.props.data.list)
             const { forecast } = this.props;
+=======
+        } else if(this.props.submit) {
+            const { forecast, selectedCity, data, days, submit } = this.props;
+>>>>>>> 353c3e0f2deaf972d882900176bef29563522b02
             return (
                 <div>
                     <Form
                         getCity={this.getCity}
+                        submit={submit}
                     />
                     <Weather
-                        city={this.props.selectedCity}
+                        city={selectedCity}
                         forecast={forecast}
                     />
                     <WeatherList
-                        infoData={this.props.data}
-                        data={this.props.days} />
+                        infoData={data}
+                        data={days} />
                 </div>
             )
         }
@@ -63,7 +70,8 @@ const mapStateToProps = state => {
         loading: state.data.isLoading,
         forecast: state.data.forecast,
         days: state.data.typeForecast,
-        selectedCity: state.data.selectCity
+        selectedCity: state.data.selectCity,
+        submit: state.data.submit
     }
 }
 
@@ -71,7 +79,8 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchData: url => dispatch(itemsFetchData(url)),
         chooseDays: type => dispatch(chooseDay(type)),
-        selectCityInput: city => dispatch(selectCity(city))
+        selectCityInput: city => dispatch(selectCity(city)),
+        submitSuccess: type => dispatch(onSubmitSuccess(type))
     }
 }
 

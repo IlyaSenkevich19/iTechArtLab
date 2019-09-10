@@ -5,8 +5,8 @@ export class ArrayCalc {
     }
 
     creatingArr(array) {
-        const strArr = array.split(' ');
-        const newArr = strArr.map(el => Number(el));
+       const newArr = array.replace(/[^0-9%^*\/()\-+.]/g, '').split('').map(el=>Number(el));
+       console.log(newArr)
         return newArr;
     }
 
@@ -58,23 +58,35 @@ export class ArrayCalc {
     }
 
     selection() {
-        let currentQueue = [];
-        let lengthOfQue = [];
-        for (let i = 0; i < this.arr.length; i++) {
-            if (currentQueue.length === 0) {
-                currentQueue.push(this.arr[i]);
-            } else if (currentQueue[currentQueue.length - 1] - this.arr[i] < 0) {
-                currentQueue.push(this.arr[i]);
-            } else if (lengthOfQue.length <= currentQueue.length) {
-                lengthOfQue = current;
-                currentQueue = [];
-                currentQueue.push(this.arr[i]);
-            }
-            if (this.arr.length == i + 1 && currentQueue.length >= lengthOfQue.length) {
-                lengthOfQue = currentQueue;
+        let sliceFrom = 0;
+        let sliceTo;
+        let max;
+        let newArray = [];
+
+        for(let i = 0; i < this.arr.length; i ++) {
+            if(this.arr[i] > max) {
+                max = this.arr[i];
+                sliceTo = i;
+            } else {
+                newArray.push(this.arr.slice(sliceFrom, sliceTo + 1));
+                sliceFrom = i;
+                max = this.arr[i];
             }
         }
-        return lengthOfQue;
+        newArray.push(this.arr.slice(sliceFrom, sliceTo + 1));
+
+        let maxSum = 0
+        let index = 0;
+        for(let i in newArray) {
+            let seqSum = newArray[i].reduce((a, b) => a + b, 0);
+            if(seqSum > maxSum) {
+                index = i;
+                maxSum = seqSum;
+            }
+        }
+        const sequance = newArray[index];
+
+        return sequance;
     }
 }
 
