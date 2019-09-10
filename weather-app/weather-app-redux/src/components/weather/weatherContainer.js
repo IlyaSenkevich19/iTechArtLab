@@ -7,20 +7,19 @@ import Loading from "../Loading";
 import Form from "../Form";
 import WeatherList from './WeatherList';
 
+
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
 class WeatherContainer extends Component {
 
 
-    getCity =  (e) => {
+    getCity = async (e) => {
         e.preventDefault();
         const cityName = e.target.elements.city.value;
         const day = document.querySelector('select').value;
-        this.props.submitSuccess(false);
         this.props.chooseDays(day);
         this.props.selectCityInput(cityName);
-         this.props.fetchData(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${this.props.selectedCity}&APPID=${API_KEY}&units=metric`);
-        this.props.submitSuccess(true)
+        this.props.fetchData(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${this.props.selectedCity}&APPID=${API_KEY}&units=metric`);
     }
 
     refreshPage = () => {
@@ -37,7 +36,7 @@ class WeatherContainer extends Component {
         }
         if (this.props.loading) {
             return (<Loading />);
-        } else  {
+        } else if(this.props.submit) {
             const { forecast, selectedCity, data, days, submit } = this.props;
             return (
                 <div>
