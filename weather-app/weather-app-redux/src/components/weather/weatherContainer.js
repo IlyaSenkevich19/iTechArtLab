@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Weather from './weather';
+import Weather from './Weather';
 
 import { itemsFetchData, chooseDay, selectCity } from '../../actions/actions';
 import Loading from "../Loading";
@@ -9,7 +9,7 @@ import WeatherList from './WeatherList';
 
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
-class WeatherContainer extends Component {
+class WeatherContainer extends React.PureComponent {
 
 
     getCity = (e) => {
@@ -18,7 +18,7 @@ class WeatherContainer extends Component {
         const day = document.querySelector('select').value;
         this.props.chooseDays(day);
         this.props.selectCityInput(cityName);
-        this.props.fetchData(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${this.props.selectedCity}&APPID=${API_KEY}&units=metric`);
+        this.props.fetchData(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=${API_KEY}&units=metric`);
     }
 
     refreshPage = () => {
@@ -36,6 +36,7 @@ class WeatherContainer extends Component {
         if (this.props.loading) {
             return (<Loading />);
         } else {
+            console.log(this.props.data.list)
             const { forecast } = this.props;
             return (
                 <div>

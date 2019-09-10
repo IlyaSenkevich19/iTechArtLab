@@ -7,7 +7,7 @@ const Day = props => {
     const icon = props.lists.weather[0].icon;
     const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
     const date = props.lists.dt_txt;
-   
+
     const parseDate = (date) => {
         const split = date.split(' ');
         const time = split[1].split(':');
@@ -17,9 +17,11 @@ const Day = props => {
         return newDate;
     }
 
+    const resultDate = parseDate(date);
+
     return (
         <div>
-            <p className='date'>{parseDate(date)}</p>
+            <p className='date'>{resultDate}</p>
             <img className='small-icon' src={iconURL} alt={description} />
             <p className='info'>Temperature: {temp}</p>
             <p className='info'>Description: {description}</p>

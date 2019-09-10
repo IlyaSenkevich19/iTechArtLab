@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-class Weather extends Component {
+class Weather extends React.PureComponent {
     render() {
         const city = this.props.city;
         const { temp, description, icon  } = this.props.forecast[0];
         const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
-
+        const t = Math.floor(temp);
         return (
             <div className='mainInfo'>
                 {city ?
@@ -15,7 +15,7 @@ class Weather extends Component {
                             <p className='city'>{city}</p>
                             <div className='date'>
                                 <img className='icon' src={iconURL} alt={description} />
-                                <p className='temp'>{Math.floor(temp)}*C</p>
+                                <p className='temp'>{t}*C</p>
                             </div>
                             <div className="date2">
                                 <p className='desc'>{description}</p>
