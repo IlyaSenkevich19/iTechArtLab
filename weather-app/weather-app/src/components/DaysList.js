@@ -6,7 +6,7 @@ class DaysList extends React.Component {
     render() {
         const { city, error, list, days } = this.props.weather;
         
-        if (days === 'за 3 дня') {
+        if (days === 3) {
             return (
                 <div className='listDay'>
                     {city ?
@@ -16,7 +16,7 @@ class DaysList extends React.Component {
                     }
                 </div>
             )
-        } else if (days === 'за 1 день') {
+        } else if (days === 1) {
             return (
                 <div className='listDay'>
                     {city ?
@@ -26,7 +26,7 @@ class DaysList extends React.Component {
                     }
                 </div>
             )
-        } else if (days === 'за 5 дней') {
+        } else if (days === 5) {
             return (
                 <div className='listDay'>
                     {city ?

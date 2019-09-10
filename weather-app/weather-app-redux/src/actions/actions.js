@@ -33,11 +33,17 @@ export const chooseDay = type => {
     }
 }
 export const selectCity = city => {
-    console.log(city);
     return {
         type: "SELECT_CITY",
         payload: city
     }
+}
+
+export const onSubmitSuccess = type => {
+  return {
+      type: "SET_SUBMIT_TYPE",
+      payload: type
+  }
 }
 
 export const itemsFetchData = url => dispatch => {

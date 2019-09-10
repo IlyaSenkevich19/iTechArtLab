@@ -4,7 +4,8 @@ const initialState = {
     items: [],
     forecast: [{}],
     typeForecast: 'за 1 день',
-    selectCity: 'Minsk'
+    selectCity: 'Minsk',
+    submit: true
 
 }
 
@@ -44,27 +45,35 @@ const isLoading = (state, bool) => {
  }
 
  const selectCityName = (state, city) => {
-     console.log(city);
      return {
          ...state,
          selectCity: city
      }
  }
 
+ const onSubmitSuccess = (state, type) => {
+     return {
+         ...state,
+         submit: type
+     }
+ }
+
 export const informReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ITEMS_HAS_ERRORED' :
+        case 'ITEMS_HAS_ERRORED':
             return hasErrored(state, action.payload);
-        case 'ITEMS_IS_LOADING' :
+        case 'ITEMS_IS_LOADING':
             return isLoading(state, action.payload);
-        case 'ITEMS_FETCH_DATA_SUCCESS' :
+        case 'ITEMS_FETCH_DATA_SUCCESS':
             return itemsFetchData(state, action.payload);
         case "SET_FORECAST":
             return setForecastInfo(state, action.payload);
         case "CHOOSE_TYPE":
             return chooseDayType(state, action.payload);
         case "SELECT_CITY":
-            return selectCityName(state, action.payload)
+            return selectCityName(state, action.payload);
+        case "SET_SUBMIT_TYPE": 
+          return onSubmitSuccess(state, action.payload);    
         default: return state;
     }
 }

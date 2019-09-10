@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherContainer from './weather/weatherContainer'
+import WeatherContainer from './weather/WeatherContainer'
 import Title from './Title';
 
 const App = () => {

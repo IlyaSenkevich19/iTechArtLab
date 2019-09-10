@@ -9,7 +9,7 @@ import DaysList from "./components/DaysList";
 
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
-class App extends React.Component {
+class App extends React.PureComponent {
 
   state = {
     temperature: undefined,
@@ -21,7 +21,7 @@ class App extends React.Component {
     icon: undefined,
     error: undefined,
     list: null,
-    days: 'за 1 день',
+    days: 1,
   }
 
   getApiWeather = async e => {
