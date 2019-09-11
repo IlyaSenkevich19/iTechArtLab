@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import Weather from './Weather';
 
 import { itemsFetchData, chooseDay, selectCity, onSubmitSuccess } from '../../actions/actions';
 import Loading from "../Loading";
 import Form from "../Form";
 import WeatherList from './WeatherList';
+import Weather from './weather';
 
 
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
@@ -36,14 +36,10 @@ class WeatherContainer extends React.PureComponent {
         }
         if (this.props.loading) {
             return (<Loading />);
-<<<<<<< HEAD
-        } else {
-            console.log(this.props.data.list)
-            const { forecast } = this.props;
-=======
-        } else if(this.props.submit) {
+
+        } else if (this.props.submit) {
             const { forecast, selectedCity, data, days, submit } = this.props;
->>>>>>> 353c3e0f2deaf972d882900176bef29563522b02
+
             return (
                 <div>
                     <Form
@@ -56,11 +52,12 @@ class WeatherContainer extends React.PureComponent {
                     />
                     <WeatherList
                         infoData={data}
-                        data={days} />
+                        data={days} 
+                    />
                 </div>
             )
         }
-    }
+    }  
 }
 
 const mapStateToProps = state => {
