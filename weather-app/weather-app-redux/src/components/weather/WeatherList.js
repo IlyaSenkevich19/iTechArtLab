@@ -7,21 +7,21 @@ class WeatherList extends React.PureComponent {
     render() {
         let days = this.props.data;
         const { list, city, error } = this.props.infoData;
-        days = days.replace(/\D+/g,"");
-        
-        const obj = {
+        days = days.replace(/\D+/g, "");
+
+        const objDays = {
             1: 11,
             3: 27,
             5: 39
         }
 
-        return ( <div className='listDay'>
-                    {city ?
-                         <div className='main'>
-                             {list.filter((el, index) => (index < obj[days])).map(day => <div key={day.dt} className='oneDay'> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
-                         </div> : <p className='error'>{error}</p>
-                     }
-                 </div>)
+        return (<div className='listDay'>
+            {city ?
+                <div className='main'>
+                    {list.filter((el, index) => (index < objDays[days])).map(day => <div key={day.dt} className='oneDay'> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
+                </div> : <p className='error'>{error}</p>
+            }
+        </div>)
     }
 };
 

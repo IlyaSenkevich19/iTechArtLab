@@ -21,7 +21,11 @@ class App extends React.PureComponent {
     icon: undefined,
     error: undefined,
     list: null,
-    days: 1,
+    days: '1',
+  }
+
+  fetchData = url => {
+   
   }
 
   getApiWeather = async e => {
@@ -30,11 +34,13 @@ class App extends React.PureComponent {
     const city = e.target.elements.city.value;
     const day = document.querySelector('select').value;
 
-    this.setState({
-      showSpinner: true
-    });
+   
 
     try {
+      this.setState({
+        showSpinner: true
+      });
+
       const getApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${API_KEY}&units=metric`, {
         mode: 'cors',
         headers: {

@@ -6,57 +6,42 @@ const initialState = {
     typeForecast: 'за 1 день',
     selectCity: 'Minsk',
     submit: true
-
 }
 
-const itemsFetchData = (state, data) => {
-    return {
-        ...state,
-        items: data
-    }
-};
+const itemsFetchData = (state, data) => ({
+    ...state,
+    items: data
+})
 
-const hasErrored = (state, bool) => {
-     return {
-         ...state,
-         hasErrored: bool
-     }
- }
+const hasErrored = (state, bool) => ({
+    ...state,
+    hasErrored: bool
+})
 
-const isLoading = (state, bool) => {
-     return {
-         ...state,
-         isLoading: bool
-     }
- }
+const isLoading = (state, bool) => ({
+    ...state,
+    isLoading: bool
+})
 
- const setForecastInfo = (state, forecast) => {
-     return {
-         ...state,
-        forecast: forecast
-     }
- }
+const setForecastInfo = (state, forecast) => ({
+    ...state,
+    forecast: forecast
+})
 
- const chooseDayType = (state, type) => {
-     return {
-         ...state,
-         typeForecast: type
-     }
- }
+const chooseDayType = (state, type) => ({
+    ...state,
+    typeForecast: type
+})
 
- const selectCityName = (state, city) => {
-     return {
-         ...state,
-         selectCity: city
-     }
- }
+const selectCityName = (state, city) => ({
+    ...state,
+    selectCity: city
+})
 
- const onSubmitSuccess = (state, type) => {
-     return {
-         ...state,
-         submit: type
-     }
- }
+const onSubmitSuccess = (state, type) => ({
+    ...state,
+    submit: type
+})
 
 export const informReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -72,8 +57,8 @@ export const informReducer = (state = initialState, action) => {
             return chooseDayType(state, action.payload);
         case "SELECT_CITY":
             return selectCityName(state, action.payload);
-        case "SET_SUBMIT_TYPE": 
-          return onSubmitSuccess(state, action.payload);    
+        case "SET_SUBMIT_TYPE":
+            return onSubmitSuccess(state, action.payload);
         default: return state;
     }
 }

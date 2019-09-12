@@ -3,7 +3,7 @@ import React from "react";
 class Weather extends React.PureComponent {
     render() {
         const city = this.props.city;
-        const { temp, description, icon  } = this.props.forecast[0];
+        const { temp, description, icon } = this.props.forecast[0];
         const iconURL = `http://openweathermap.org/img/w/${icon}.png`;
         const t = Math.floor(temp);
         return (

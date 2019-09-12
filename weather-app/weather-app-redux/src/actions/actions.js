@@ -1,50 +1,43 @@
-export const itemsFetchDataSuccess = items => {
-    return {
-        type: 'ITEMS_FETCH_DATA_SUCCESS',
-        payload: items
-    };
-}
+export const itemsFetchDataSuccess = items => ({
+    type: 'ITEMS_FETCH_DATA_SUCCESS',
+    payload: items
+})
 
-export const itemsHasErrored = bool => {
-    return {
-        type: 'ITEMS_HAS_ERRORED',
-        payload: bool
-    };
-}
 
-export const itemsIsLoading = bool => {
-    return {
-        type: 'ITEMS_IS_LOADING',
-        payload: bool
-    };
-}
+export const itemsHasErrored = bool => ({
+    type: 'ITEMS_HAS_ERRORED',
+    payload: bool
+})
 
-export const setForecast = forecast => {
-    return {
-        type: 'SET_FORECAST',
-        payload: forecast
-    }
-}
 
-export const chooseDay = type => {
-    return {
-        type: "CHOOSE_TYPE",
-        payload: type
-    }
-}
-export const selectCity = city => {
-    return {
-        type: "SELECT_CITY",
-        payload: city
-    }
-}
+export const itemsIsLoading = bool => ({
+    type: 'ITEMS_IS_LOADING',
+    payload: bool
+})
 
-export const onSubmitSuccess = type => {
-    return {
-        type: "SET_SUBMIT_TYPE",
-        payload: type
-    }
-}
+
+export const setForecast = forecast => ({
+    type: 'SET_FORECAST',
+    payload: forecast
+})
+
+
+export const chooseDay = type => ({
+    type: "CHOOSE_TYPE",
+    payload: type
+})
+
+export const selectCity = city => ({
+    type: "SELECT_CITY",
+    payload: city
+})
+
+
+export const onSubmitSuccess = type => ({
+    type: "SET_SUBMIT_TYPE",
+    payload: type
+})
+
 
 export const itemsFetchData = url => dispatch => {
 
@@ -78,9 +71,7 @@ export const itemsFetchData = url => dispatch => {
                 })))
                 dispatch(itemsFetchDataSuccess(items));
                 dispatch(onSubmitSuccess(true))
-                
             }
         })
         .catch(() => dispatch(itemsHasErrored(true)));
-
 }

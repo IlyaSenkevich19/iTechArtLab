@@ -17,9 +17,11 @@ const Day = props => {
         return newDate;
     }
 
+    const dateResult = parseDate(date);
+
     return (
         <div>
-            <p className='date'>{parseDate(date)}</p>
+            <p className='date'>{dateResult}</p>
             <img className='small-icon' src={iconURL} alt={description} />
             <p className='info'>Temperature: {temp}</p>
             <p className='info'>Description: {description}</p>

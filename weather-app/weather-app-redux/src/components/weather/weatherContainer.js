@@ -7,13 +7,11 @@ import Form from "../Form";
 import WeatherList from './WeatherList';
 import Weather from './weather';
 
-
 const API_KEY = '6a07bd6f742763532d7553722f09ccf3';
 
 class WeatherContainer extends React.PureComponent {
 
-
-    getCity = async (e) => {
+    getCity = e => {
         e.preventDefault();
         const cityName = e.target.elements.city.value;
         const day = document.querySelector('select').value;
@@ -52,12 +50,12 @@ class WeatherContainer extends React.PureComponent {
                     />
                     <WeatherList
                         infoData={data}
-                        data={days} 
+                        data={days}
                     />
                 </div>
             )
         }
-    }  
+    }
 }
 
 const mapStateToProps = state => {
