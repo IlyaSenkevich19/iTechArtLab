@@ -1,7 +1,7 @@
 import React from "react";
 
-import Day from '../Day'
-
+import Day from '../Day';
+import Loading from '../Loading';
 
 class WeatherList extends React.PureComponent {
     render() {
@@ -15,13 +15,18 @@ class WeatherList extends React.PureComponent {
             5: 39
         }
 
-        return (<div className='listDay'>
-            {city ?
-                <div className='main'>
-                    {list.filter((el, index) => (index < objDays[days])).map(day => <div key={day.dt} className='oneDay'> <Day chooseDay={this.props.weather} lists={day} /> </div>)}
-                </div> : <p className='error'>{error}</p>
-            }
-        </div>)
+        if (list === undefined) {
+            return (<Loading />)
+        } else {
+            const newList = list.filter((el, index) => (index < objDays[days])).map(day => <div key={day.dt} className='oneDay'> <Day chooseDay={this.props.weather} lists={day} /> </div>)
+            return (<div className='listDay'>
+                {city ?
+                    <div className='main'>
+                        {newList}
+                    </div> : <p className='error'>{error}</p>
+                }
+            </div>)
+        }
     }
 };
 

@@ -57,7 +57,7 @@ class App extends React.PureComponent {
         })
         return;
       } else {
-        this.setState({
+      this.setState({
           temperature: data.list[0].main.temp,
           city: data.city.name,
           country: data.city.country,
@@ -91,7 +91,7 @@ class App extends React.PureComponent {
 
       const data = await getApi.json();
 
-      this.setState({
+       this.setState({
         temperature: data.list[0].main.temp,
         city: data.city.name,
         country: data.city.country,
@@ -108,10 +108,10 @@ class App extends React.PureComponent {
 
   }
 
-
   render() {
     if (this.state.showSpinner) { return <Loading /> }
     else {
+      console.log(this.state.list)
       return (
         <div>
           <Title />

@@ -1,7 +1,7 @@
 import { ArrayCalc } from './modules/arrayProcessingTool.js';
 import { sortArray } from './modules/arraySorter.js';
 import { converter } from './modules/binaryConverter.js';
-import {  cachingCalc } from './modules/cachingCalculator.js';
+import { cachingCalc } from './modules/cachingCalculator.js';
 import { DateFormatter } from './modules/dateDisplayFormatter.js';
 import { StringCalc } from './modules/stringCalculator.js';
 import { getText } from './modules/textFormatter.js';
@@ -95,6 +95,16 @@ const reverseDate = findElement('.reverseDate');
 const secondRevDate = findElement('.secondRevDate');
 const dateFromNow = findElement('.dateFromNow');
 
+const inputTypeOfDate = findElement('.input-date');
+const inputDate = findElement('.dateFormat');
+const btnGetDate = findElement('.');
+
+const showResultDate = findElement('.');
+
+btnGetDate.addEventListener('click', () => {
+   
+});
+
 
 
 //stringCalculator
@@ -118,9 +128,8 @@ const maxNumStr = findElement('.maxNumStr');
 const maxLen = findElement('.maxLen');
 
 const typeFormatting = findElement('.format');
+const btnResultTextFormatter = findElement('.btnTextFormatter');
 
-text.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-        showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), typeFormatting.value);
-    }
+btnResultTextFormatter.addEventListener('click', () => {
+    showText.innerHTML = getText(text.value, Number(maxNumStr.value), Number(maxLen.value), typeFormatting.value);
 });

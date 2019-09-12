@@ -58,25 +58,23 @@ class WeatherContainer extends React.PureComponent {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        data: state.data.items,
-        error: state.data.hasErrored,
-        loading: state.data.isLoading,
-        forecast: state.data.forecast,
-        days: state.data.typeForecast,
-        selectedCity: state.data.selectCity,
-        submit: state.data.submit
-    }
-}
+const mapStateToProps = state => ({
+    data: state.data.items,
+    error: state.data.hasErrored,
+    loading: state.data.isLoading,
+    forecast: state.data.forecast,
+    days: state.data.typeForecast,
+    selectedCity: state.data.selectCity,
+    submit: state.data.submit
+})
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchData: url => dispatch(itemsFetchData(url)),
-        chooseDays: type => dispatch(chooseDay(type)),
-        selectCityInput: city => dispatch(selectCity(city)),
-        submitSuccess: type => dispatch(onSubmitSuccess(type))
-    }
-}
+
+const mapDispatchToProps = dispatch => ({
+    fetchData: url => dispatch(itemsFetchData(url)),
+    chooseDays: type => dispatch(chooseDay(type)),
+    selectCityInput: city => dispatch(selectCity(city)),
+    submitSuccess: type => dispatch(onSubmitSuccess(type))
+})
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(WeatherContainer);

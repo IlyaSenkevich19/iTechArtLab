@@ -13,6 +13,7 @@ class DaysList extends React.Component {
             5: 39
         }
         
+        
         return ( <div className='listDay'>
         {city ?
              <div className='main'>

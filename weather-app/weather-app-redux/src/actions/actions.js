@@ -59,16 +59,13 @@ export const itemsFetchData = url => dispatch => {
         })
         .then(response => response.json())
         .then(items => {
-            console.log(items)
             if (items.cod !== '404') {
-                dispatch(setForecast(items.list.map(day => {
-                    return {
-                        temp: day.main.temp,
-                        description: day.weather[0].description,
-                        icon: day.weather[0].icon,
-                        day: day.dt
-                    }
-                })))
+                dispatch(setForecast(items.list.map(day => ({
+                    temp: day.main.temp,
+                    description: day.weather[0].description,
+                    icon: day.weather[0].icon,
+                    day: day.dt
+                }))))
                 dispatch(itemsFetchDataSuccess(items));
                 dispatch(onSubmitSuccess(true))
             }
