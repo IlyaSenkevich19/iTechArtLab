@@ -20,21 +20,16 @@ class App extends React.PureComponent {
     showSpinner: false,
     icon: undefined,
     error: undefined,
-    list: null,
+    list: undefined,
     days: '1',
   }
 
-  fetchData = url => {
-   
+  refreshPage = () => {
+    window.location.reload();
   }
-
-  getApiWeather = async e => {
-    e.preventDefault();
-
-    const city = e.target.elements.city.value;
+  
+  fetchData = async city => {
     const day = document.querySelector('select').value;
-
-   
 
     try {
       this.setState({
@@ -51,13 +46,13 @@ class App extends React.PureComponent {
 
       const data = await getApi.json();
 
-      if (data.cod === '404' || !city) {
+      if (data.cod === '404' || data.cod === '400') {
         this.setState({
           error: "Enter the correct city name",
         })
         return;
       } else {
-      this.setState({
+        this.setState({
           temperature: data.list[0].main.temp,
           city: data.city.name,
           country: data.city.country,
@@ -70,52 +65,33 @@ class App extends React.PureComponent {
         });
       }
     }
+
     catch (err) {
       console.log("ERROR", err)
     }
   }
 
-  componentDidMount = async () => {
-    try {
-      this.setState({
-        showSpinner: true
-      })
 
-      const getApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Minsk&APPID=${API_KEY}&units=metric`, {
-        mode: 'cors',
-        headers: {
-          'Content-Type': ["image/png", 'application/json'],
-          'Accept': 'application/json',
-        }
-      });
+  getWeather = () => {
+    const city = document.querySelector('.input').value;
+    this.fetchData(city)
+  }
 
-      const data = await getApi.json();
 
-       this.setState({
-        temperature: data.list[0].main.temp,
-        city: data.city.name,
-        country: data.city.country,
-        description: data.list[0].weather[0].description,
-        humidity: data.list[0].main.humidity,
-        icon: data.list[0].weather[0].icon,
-        showSpinner: false,
-        list: data.list,
-      });
-    }
-    catch (err) {
-      console.log(err);
-    }
-
+  componentDidMount = () => {
+    this.fetchData("Minsk");
   }
 
   render() {
+    if (this.state.error) {
+      return (<p className='error'>{this.state.error}<button onClick={this.refreshPage}>Try again</button></p>)
+    }
     if (this.state.showSpinner) { return <Loading /> }
     else {
-      console.log(this.state.list)
       return (
         <div>
           <Title />
-          <Form getApiWeather={this.getApiWeather} />
+          <Form getApiWeather={this.getWeather} />
           <Weather weather={this.state} />
           <div className='addInfo'>Additional weather information at different times</div>
           <DaysList weather={this.state} />
